@@ -30,11 +30,23 @@ namespace DiscordApp_v._02
 
             var commands = discord.GetService<CommandService>();
 
+            commands.CreateCommand("Hello")
+                .Do(async (e) =>
+                {
+                    await e.Channel.SendMessage("P-please don't message me at random like that. O///O");
+                });
+
             commands.CreateCommand("Status")
                 .Do(async (e) =>
                 {
-                    await e.Channel.SendMessage("Fuck You");
+                    await e.Channel.SendMessage("Pls be nice to me while I am in development.");
                 });
+
+            commands.CreateCommand("Name")
+               .Do(async (e) =>
+               {
+                   await e.Channel.SendMessage("I will go by SquidKid when I am up and running.");
+               });
 
             discord.ExecuteAndWait(async () =>
             {
