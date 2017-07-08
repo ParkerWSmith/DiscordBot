@@ -16,7 +16,9 @@ namespace DiscordApp_v._02
 
         Random rand;
 
+
         string[] henReader;
+        string[] goodQuote;
 
         public SquidKid()
         {
@@ -37,6 +39,17 @@ namespace DiscordApp_v._02
                 "randumb/hr12.jpg",
                 "randumb/hr13.jpg",
                 "randumb/hr14.jpg"
+            };
+
+            goodQuote = new string[]
+            {
+                "I'm 15 minutes from a felony. - Parker Smith, 2017",
+                "It's Sunday somewhere. - Parker Craine, 2016",
+                "I wonder if this urinal will wash my pee pee. - Mohamed Aden, 2015",
+                "You arn't drunk unless you shit your pants twice. - Nic Carnes, 2015",
+                "I want it like the picture. - Jun Ho Lee, 2014",
+                "I will go to Metacon 2016 - Brennan Schneider, 2016"
+
             };
 
             discord = new DiscordClient(x =>
@@ -77,7 +90,13 @@ namespace DiscordApp_v._02
                {
                    await e.Channel.SendMessage("Kyaaaaa~");
                });
-         
+
+            commands.CreateCommand("kill_me")
+               .Do(async (e) =>
+               {
+                   await e.Channel.SendMessage(":suffering:");
+               });
+
             commands.CreateCommand("hr")
                         .Do(async (e) =>
                         {
@@ -86,7 +105,15 @@ namespace DiscordApp_v._02
                             await e.Channel.SendFile(hrToPost);
                         });
 
-                discord.ExecuteAndWait(async () =>
+            commands.CreateCommand("quote")
+                        .Do(async (e) =>
+                        {
+                            int randomHQuoteIndex = rand.Next(goodQuote.Length);
+                            string quoteToPost = goodQuote[randomHQuoteIndex];
+                            await e.Channel.SendMessage(quoteToPost);
+                        });
+
+            discord.ExecuteAndWait(async () =>
             {
                 await discord.Connect("MzI5NzMwOTI0NTM3MzE1MzI5.DDfGWg.tqJUDn27CADP9err_zXZq81KJlI", TokenType.Bot);
             });
