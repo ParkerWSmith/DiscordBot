@@ -24,7 +24,7 @@ namespace DiscordApp_v._02
         {
             rand = new Random();
 
-            henReader = new string[]
+            henReader = new string[]  //Images for the henreader function
             {
                 "randumb/hr2.jpg",
                 "randumb/hr3.jpg",
@@ -41,7 +41,7 @@ namespace DiscordApp_v._02
                 "randumb/hr14.jpg"
             };
 
-            goodQuote = new string[]
+            goodQuote = new string[]  //Quotes for the quote function
             {
                 "I'm 15 minutes from a felony. - Parker Smith, 2017",
                 "It's Sunday somewhere. - Parker Craine, 2016",
@@ -67,37 +67,37 @@ namespace DiscordApp_v._02
 
             commands = discord.GetService<CommandService>();
 
-            commands.CreateCommand("Hello")
+            commands.CreateCommand("Hello") //Hi
                 .Do(async (e) =>
                 {
                     await e.Channel.SendMessage("P-please don't message me at random like that. O///O");
                 });
 
-            commands.CreateCommand("Status")
+            commands.CreateCommand("Status") //Alive or not
                 .Do(async (e) =>
                 {
                     await e.Channel.SendMessage("Pls be nice to me while I am in development.");
                 });
 
-            commands.CreateCommand("Name")
+            commands.CreateCommand("Name") //What is the bots name
                .Do(async (e) =>
                {
                    await e.Channel.SendMessage("I will go by SquidKid when I am up and running.");
                });
 
-            commands.CreateCommand("kiss")
+            commands.CreateCommand("kiss") //*kiss*
                .Do(async (e) =>
                {
                    await e.Channel.SendMessage("Kyaaaaa~");
                });
 
-            commands.CreateCommand("kill_me")
+            commands.CreateCommand("kill_me") //Posts Emote
                .Do(async (e) =>
                {
                    await e.Channel.SendMessage(":suffering:");
                });
 
-            commands.CreateCommand("hr")
+            commands.CreateCommand("hr")  //Henreader Function
                         .Do(async (e) =>
                         {
                             int randomHrIndex = rand.Next(henReader.Length);
@@ -105,7 +105,7 @@ namespace DiscordApp_v._02
                             await e.Channel.SendFile(hrToPost);
                         });
 
-            commands.CreateCommand("quote")
+            commands.CreateCommand("quote")  //Quote Function
                         .Do(async (e) =>
                         {
                             int randomHQuoteIndex = rand.Next(goodQuote.Length);
