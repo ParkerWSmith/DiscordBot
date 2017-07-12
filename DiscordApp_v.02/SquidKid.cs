@@ -16,8 +16,6 @@ namespace DiscordApp_v._02
 
         Random rand;
 
-
-        string[] henReader;
         string[] goodQuote;
         string[] hardCore;
 
@@ -103,6 +101,67 @@ namespace DiscordApp_v._02
                 "randumb/new_(20).jpeg",
                 "randumb/new_(20).jpg",
                 "randumb/new_(20).png",
+                "randumb/new_(21).jpeg",
+                "randumb/new_(21).jpg",
+                "randumb/new_(21).png",
+                "randumb/new_(22).jpeg",
+                "randumb/new_(22).jpg",
+                "randumb/new_(22).png",
+                "randumb/new_(23).jpeg",
+                "randumb/new_(23).jpg",
+                "randumb/new_(23).png",
+                "randumb/new_(24).jpeg",
+                "randumb/new_(24).jpg",
+                "randumb/new_(24).png",
+                "randumb/new_(25).jpeg",
+                "randumb/new_(25).jpg",
+                "randumb/new_(25).png",
+                "randumb/new_(26).jpeg",
+                "randumb/new_(26).jpg",
+                "randumb/new_(26).png",
+                "randumb/new_(27).jpeg",
+                "randumb/new_(27).jpg",
+                "randumb/new_(27).png",
+                "randumb/new_(28).jpeg",
+                "randumb/new_(28).jpg",
+                "randumb/new_(28).png",
+                "randumb/new_(29).jpeg",
+                "randumb/new_(29).jpg",
+                "randumb/new_(29).png",
+                "randumb/new_(30).jpeg",
+                "randumb/new_(30).jpg",
+                "randumb/new_(30).png",
+                "randumb/new_(31).jpeg",
+                "randumb/new_(31).jpg",
+                "randumb/new_(31).png",
+                "randumb/new_(32).jpeg",
+                "randumb/new_(32).jpg",
+                "randumb/new_(32).png",
+                "randumb/new_(33).jpeg",
+                "randumb/new_(33).jpg",
+                "randumb/new_(33).png",
+                "randumb/new_(34).jpeg",
+                "randumb/new_(34).jpg",
+                "randumb/new_(34).png",
+                "randumb/new_(35).jpeg",
+                "randumb/new_(35).jpg",
+                "randumb/new_(35).png",
+                "randumb/new_(36).jpeg",
+                "randumb/new_(36).jpg",
+                "randumb/new_(36).png",
+                "randumb/new_(37).jpeg",
+                "randumb/new_(37).jpg",
+                "randumb/new_(37).png",
+                "randumb/new_(38).jpeg",
+                "randumb/new_(38).jpg",
+                "randumb/new_(38).png",
+                "randumb/new_(39).jpeg",
+                "randumb/new_(39).jpg",
+                "randumb/new_(49).png",
+                "randumb/new_(40).jpeg",
+                "randumb/new_(40).jpg",
+                "randumb/new_(40).png",
+
             };
 
             goodQuote = new string[]  //Quotes for the quote function
@@ -112,7 +171,10 @@ namespace DiscordApp_v._02
                 "I wonder if this urinal will wash my pee pee. - Mohamed Aden, 2015",
                 "You arn't drunk unless you shit your pants twice. - Nic Carnes, 2015",
                 "I want it like the picture. - Jun Ho Lee, 2014",
-                "I will go to Metacon 2016 - Brennan Schneider, 2016"
+                "I will go to Metacon 2016 - Brennan Schneider, 2016",
+                "I'm a literal nobody - Parker Smith, 2016",
+                "FINLAND - Jim Nordberg, ALL THE FUCKING TIME",
+                "Well when I was in... - Parker Smith, ALL THE FUCKING TIME"
 
             };
 
@@ -135,6 +197,12 @@ namespace DiscordApp_v._02
                 .Do(async (e) =>
                 {
                     await e.Channel.SendMessage("P-please don't message me at random like that. O///O");
+                });
+
+            commands.CreateCommand("help") //Hi
+                .Do(async (e) =>
+                {
+                    await e.Channel.SendMessage("You can fuck right off, I can't even figure out why I'm here.");
                 });
 
             commands.CreateCommand("Status") //Alive or not
