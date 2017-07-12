@@ -123,6 +123,135 @@
     <Content Include="randumb\hr9.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="randumb\new_%281%29.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="randumb\new_%281%29.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="randumb\new_%281%29.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="randumb\new_%281%29.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="randumb\new_%2810%29.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="randumb\new_%2810%29.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="randumb\new_%2810%29.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="randumb\new_%2811%29.jpeg" />
+    <Content Include="randumb\new_%2811%29.jpg" />
+    <Content Include="randumb\new_%2811%29.png" />
+    <Content Include="randumb\new_%2812%29.jpeg" />
+    <Content Include="randumb\new_%2812%29.jpg" />
+    <Content Include="randumb\new_%2812%29.png" />
+    <Content Include="randumb\new_%2813%29.jpeg" />
+    <Content Include="randumb\new_%2813%29.jpg" />
+    <Content Include="randumb\new_%2813%29.png" />
+    <Content Include="randumb\new_%2814%29.jpeg" />
+    <Content Include="randumb\new_%2814%29.jpg" />
+    <Content Include="randumb\new_%2814%29.png" />
+    <Content Include="randumb\new_%2815%29.jpeg" />
+    <Content Include="randumb\new_%2815%29.jpg" />
+    <Content Include="randumb\new_%2815%29.png" />
+    <Content Include="randumb\new_%2816%29.jpeg" />
+    <Content Include="randumb\new_%2816%29.jpg" />
+    <Content Include="randumb\new_%2816%29.png" />
+    <Content Include="randumb\new_%2817%29.jpeg" />
+    <Content Include="randumb\new_%2817%29.jpg" />
+    <Content Include="randumb\new_%2817%29.png" />
+    <Content Include="randumb\new_%2818%29.jpeg" />
+    <Content Include="randumb\new_%2818%29.jpg" />
+    <Content Include="randumb\new_%2818%29.png" />
+    <Content Include="randumb\new_%2819%29.jpeg" />
+    <Content Include="randumb\new_%2819%29.jpg" />
+    <Content Include="randumb\new_%2819%29.png" />
+    <Content Include="randumb\new_%282%29.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="randumb\new_%282%29.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="randumb\new_%282%29.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="randumb\new_%282%29.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="randumb\new_%2820%29.jpeg" />
+    <Content Include="randumb\new_%2820%29.jpg" />
+    <Content Include="randumb\new_%2820%29.png" />
+    <Content Include="randumb\new_%283%29.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="randumb\new_%283%29.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="randumb\new_%283%29.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="randumb\new_%283%29.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="randumb\new_%284%29.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="randumb\new_%284%29.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="randumb\new_%284%29.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="randumb\new_%285%29.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="randumb\new_%285%29.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="randumb\new_%285%29.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="randumb\new_%286%29.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="randumb\new_%286%29.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="randumb\new_%286%29.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="randumb\new_%287%29.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="randumb\new_%287%29.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="randumb\new_%287%29.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="randumb\new_%288%29.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="randumb\new_%288%29.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="randumb\new_%288%29.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="randumb\new_%289%29.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="randumb\new_%289%29.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="randumb\new_%289%29.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

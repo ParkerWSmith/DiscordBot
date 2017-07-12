@@ -19,12 +19,13 @@ namespace DiscordApp_v._02
 
         string[] henReader;
         string[] goodQuote;
+        string[] hardCore;
 
         public SquidKid()
         {
             rand = new Random();
 
-            henReader = new string[]  //Images for the henreader function
+            hardCore = new string[]  //Images for the Hentai function
             {
                 "randumb/hr2.jpg",
                 "randumb/hr3.jpg",
@@ -38,7 +39,70 @@ namespace DiscordApp_v._02
                 "randumb/hr11.jpg",
                 "randumb/hr12.jpg",
                 "randumb/hr13.jpg",
-                "randumb/hr14.jpg"
+                "randumb/hr14.jpg",
+                "randumb/new_(1).gif",
+                "randumb/new_(1).jpeg",
+                "randumb/new_(1).jpg",
+                "randumb/new_(1).png",
+                "randumb/new_(2).gif",
+                "randumb/new_(2).jpeg",
+                "randumb/new_(2).jpg",
+                "randumb/new_(2).png",
+                "randumb/new_(3).gif",
+                "randumb/new_(3).jpeg",
+                "randumb/new_(3).jpg",
+                "randumb/new_(3).png",
+                "randumb/new_(4).jpeg",
+                "randumb/new_(4).jpg",
+                "randumb/new_(4).png",
+                "randumb/new_(5).jpeg",
+                "randumb/new_(5).jpg",
+                "randumb/new_(5).png",
+                "randumb/new_(6).jpeg",
+                "randumb/new_(6).jpg",
+                "randumb/new_(6).png",
+                "randumb/new_(7).jpeg",
+                "randumb/new_(7).jpg",
+                "randumb/new_(7).png",
+                "randumb/new_(8).jpeg",
+                "randumb/new_(8).jpg",
+                "randumb/new_(8).png",
+                "randumb/new_(9).jpeg",
+                "randumb/new_(9).jpg",
+                "randumb/new_(9).png",
+                "randumb/new_(10).jpeg",
+                "randumb/new_(10).jpg",
+                "randumb/new_(10).png",
+                "randumb/new_(11).jpeg",
+                "randumb/new_(11).jpg",
+                "randumb/new_(11).png",
+                "randumb/new_(12).jpeg",
+                "randumb/new_(12).jpg",
+                "randumb/new_(12).png",
+                "randumb/new_(13).jpeg",
+                "randumb/new_(13).jpg",
+                "randumb/new_(13).png",
+                "randumb/new_(14).jpeg",
+                "randumb/new_(14).jpg",
+                "randumb/new_(14).png",
+                "randumb/new_(15).jpeg",
+                "randumb/new_(15).jpg",
+                "randumb/new_(15).png",
+                "randumb/new_(16).jpeg",
+                "randumb/new_(16).jpg",
+                "randumb/new_(16).png",
+                "randumb/new_(16).jpeg",
+                "randumb/new_(17).jpg",
+                "randumb/new_(17).png",
+                "randumb/new_(18).jpeg",
+                "randumb/new_(18).jpg",
+                "randumb/new_(18).png",
+                "randumb/new_(19).jpeg",
+                "randumb/new_(19).jpg",
+                "randumb/new_(19).png",
+                "randumb/new_(20).jpeg",
+                "randumb/new_(20).jpg",
+                "randumb/new_(20).png",
             };
 
             goodQuote = new string[]  //Quotes for the quote function
@@ -97,19 +161,19 @@ namespace DiscordApp_v._02
                    await e.Channel.SendMessage(":suffering:");
                });
 
-            commands.CreateCommand("hr")  //Henreader Function
-                        .Do(async (e) =>
-                        {
-                            int randomHrIndex = rand.Next(henReader.Length);
-                            string hrToPost = henReader[randomHrIndex];
-                            await e.Channel.SendFile(hrToPost);
-                        });
+            commands.CreateCommand("hentai")  //Hentai Function
+                       .Do(async (e) =>
+                       {
+                           int randomHcIndex = rand.Next(hardCore.Length);
+                           string hcToPost = hardCore[randomHcIndex];
+                           await e.Channel.SendFile(hcToPost);
+                       });
 
             commands.CreateCommand("quote")  //Quote Function
                         .Do(async (e) =>
                         {
-                            int randomHQuoteIndex = rand.Next(goodQuote.Length);
-                            string quoteToPost = goodQuote[randomHQuoteIndex];
+                            int randomQuoteIndex = rand.Next(goodQuote.Length);
+                            string quoteToPost = goodQuote[randomQuoteIndex];
                             await e.Channel.SendMessage(quoteToPost);
                         });
 
