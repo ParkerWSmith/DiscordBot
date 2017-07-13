@@ -40,8 +40,8 @@ namespace DiscordApp_v._02
                 "I wonder if this urinal will wash my pee pee. - Mohamed Aden, 2015",
                 "You arn't drunk unless you shit your pants twice. - Nic Carnes, 2015",
                 "I want it like the picture. - Jun Ho Lee, 2014",
-                "I will go to Metacon 2016 - Brennan Schneider, 2016",
-                "I'm a literal nobody - Parker Smith, 2016",
+                "I will go to Metacon 2016. - Brennan Schneider, 2016",
+                "I'm a literal nobody. - Parker Smith, 2016",
                 "FINLAND - Jim Nordberg, ALL THE FUCKING TIME",
                 "Well when I was in... - Parker Smith, ALL THE FUCKING TIME"
 
@@ -123,11 +123,12 @@ namespace DiscordApp_v._02
             {
                 await discord.Connect("MzI5NzMwOTI0NTM3MzE1MzI5.DDfGWg.tqJUDn27CADP9err_zXZq81KJlI", TokenType.Bot);
             });
-        
-    }
+
+        }
         private void Log(object sender, LogMessageEventArgs e)
         {
             Console.WriteLine(e.Message);
         }
     }
 }
+
