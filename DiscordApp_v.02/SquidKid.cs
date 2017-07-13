@@ -18,6 +18,7 @@ namespace DiscordApp_v._02
 
         string[] goodQuote;
         string[] hardCore;
+        string[] gayFur;
 
         public SquidKid()
         {
@@ -157,10 +158,110 @@ namespace DiscordApp_v._02
                 "randumb/new_(38).png",
                 "randumb/new_(39).jpeg",
                 "randumb/new_(39).jpg",
-                "randumb/new_(49).png",
+                "randumb/new_(39).png",
                 "randumb/new_(40).jpeg",
                 "randumb/new_(40).jpg",
                 "randumb/new_(40).png",
+                "randumb/new_(41).jpeg",
+                "randumb/new_(41).jpg",
+                "randumb/new_(42).jpeg",
+                "randumb/new_(42).jpg",
+                "randumb/new_(42).png",
+                "randumb/new_(43).jpeg",
+                "randumb/new_(43).jpg",
+                "randumb/new_(43).png",
+                "randumb/new_(44).jpeg",
+                "randumb/new_(44).png",
+                "randumb/new_(45).jpeg",
+                "randumb/new_(45).jpg",
+                "randumb/new_(45).png",
+                "randumb/new_(46).jpeg",
+                "randumb/new_(46).jpg",
+                "randumb/new_(46).png",
+                "randumb/new_(47).jpeg",
+                "randumb/new_(47).jpg",
+                "randumb/new_(47).png",
+                "randumb/new_(48).jpeg",
+                "randumb/new_(48).jpg",
+                "randumb/new_(48).png",
+                "randumb/new_(49).jpeg",
+                "randumb/new_(49).jpg",
+                "randumb/new_(49).png",
+                "randumb/new_(50).jpeg",
+                "randumb/new_(50).jpg",
+                "randumb/new_(50).png"
+
+            };
+
+            gayFur = new string[]  //Images for the Hentai function
+            {
+                "gay/gay(1).jpeg",
+                "gay/gay(1).jpg",
+                "gay/gay(1).png",
+                "gay/gay(2).jpeg",
+                "gay/gay(2).jpg",
+                "gay/gay(2).png",
+                "gay/gay(3).jpeg",
+                "gay/gay(3).jpg",
+                "gay/gay(3).png",
+                "gay/gay(2).jpeg",
+                "gay/gay(2).jpg",
+                "gay/gay(2).png",
+                "gay/gay(4).jpeg",
+                "gay/gay(4).jpg",
+                "gay/gay(5).jpeg",
+                "gay/gay(5).jpg",
+                "gay/gay(6).jpeg",
+                "gay/gay(6).jpg",
+                "gay/gay(7).jpeg",
+                "gay/gay(7).jpg",
+                "gay/gay(8).jpeg",
+                "gay/gay(8).jpg",
+                "gay/gay(9).jpeg",
+                "gay/gay(9).jpg",
+                "gay/gay(10).jpeg",
+                "gay/gay(10).jpg",
+                "gay/gay(11).jpeg",
+                "gay/gay(11).jpg",
+                "gay/gay(12).jpeg",
+                "gay/gay(12).jpg",
+                "gay/gay(13).jpeg",
+                "gay/gay(13).jpg",
+                "gay/gay(14).jpeg",
+                "gay/gay(14).jpg",
+                "gay/gay(15).jpeg",
+                "gay/gay(15).jpg",
+                "gay/gay(16).jpeg",
+                "gay/gay(16).jpg",
+                "gay/gay(17).jpeg",
+                "gay/gay(17).jpg",
+                "gay/gay(18).jpeg",
+                "gay/gay(18).jpg",
+                "gay/gay(19).jpeg",
+                "gay/gay(19).jpg",
+                "gay/gay(20).jpeg",
+                "gay/gay(20).jpg",
+                "gay/gay(21).jpeg",
+                "gay/gay(21).jpg",
+                "gay/gay(22).jpg",
+                "gay/gay(23).jpg",
+                "gay/gay(24).jpg",
+                "gay/gay(25).jpg",
+                "gay/gay(26).jpg",
+                "gay/gay(27).jpg",
+                "gay/gay(28).jpg",
+                "gay/gay(29).jpg",
+                "gay/gay(30).jpg",
+                "gay/gay(31).jpg",
+                "gay/gay(32).jpg",
+                "gay/gay(33).jpg",
+                "gay/gay(34).jpg",
+                "gay/gay(35).jpg",
+                "gay/gay(36).jpg",
+                "gay/gay(37).jpg",
+                "gay/gay(38).jpg",
+                "gay/gay(39).jpg",
+                "gay/gay(40).jpg"
 
             };
 
@@ -235,6 +336,14 @@ namespace DiscordApp_v._02
                            int randomHcIndex = rand.Next(hardCore.Length);
                            string hcToPost = hardCore[randomHcIndex];
                            await e.Channel.SendFile(hcToPost);
+                       });
+
+            commands.CreateCommand("gayfur")  //Gay Furry Function
+                       .Do(async (e) =>
+                       {
+                           int randomFurIndex = rand.Next(gayFur.Length);
+                           string furToPost = gayFur[randomFurIndex];
+                           await e.Channel.SendFile(furToPost);
                        });
 
             commands.CreateCommand("quote")  //Quote Function
