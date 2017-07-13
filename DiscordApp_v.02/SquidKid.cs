@@ -300,10 +300,10 @@ namespace DiscordApp_v._02
                     await e.Channel.SendMessage("P-please don't message me at random like that. O///O");
                 });
 
-            commands.CreateCommand("help") //Hi
+            commands.CreateCommand("help") //Help
                 .Do(async (e) =>
                 {
-                    await e.Channel.SendMessage("You can fuck right off, I can't even figure out why I'm here.");
+                    await e.Channel.SendMessage(" Hello - Say Hi \nName - Bots name \nStatus - Is the bot live  \nkiss - Kiss the bot  \nhentai - post from the hentai folder \ngayfur - Post from the gay folder  \nquote - Posts a classic quote ");
                 });
 
             commands.CreateCommand("Status") //Alive or not
