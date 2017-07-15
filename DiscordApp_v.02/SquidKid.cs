@@ -59,7 +59,7 @@ namespace DiscordApp_v._02
                 x.AllowMentionPrefix = true;
             });
 
-
+            
 
             commands = discord.GetService<CommandService>();
 
@@ -110,6 +110,12 @@ namespace DiscordApp_v._02
                  {
                      await e.Channel.SendFile(@"gay\" + furry[randomFurry.Next(0, furry.Length)].Name);
                  });
+
+            commands.CreateCommand("website") //Information on the website
+                .Do(async (e) =>
+                {
+                    await e.Channel.SendMessage("Information on the big up and coming Ebay for weebs can be found here.  \nhttps://github.com/ParkerWSmith/Weebsite");
+                });
 
             commands.CreateCommand("quote")  //Quote Function
                         .Do(async (e) =>
