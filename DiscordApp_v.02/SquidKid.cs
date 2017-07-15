@@ -63,7 +63,7 @@ namespace DiscordApp_v._02
 
             commands = discord.GetService<CommandService>();
 
-            commands.CreateCommand("Hello") //Hi
+            commands.CreateCommand("hello") //Hi
                 .Do(async (e) =>
                 {
                     await e.Channel.SendMessage("P-please don't message me at random like that. O///O");
@@ -93,10 +93,10 @@ namespace DiscordApp_v._02
                    await e.Channel.SendMessage("Kyaaaaa~");
                });
 
-            commands.CreateCommand("kill_me") //Posts Emote
+            commands.CreateCommand("think") //Posts Thinking and message
                .Do(async (e) =>
                {
-                   await e.Channel.SendMessage(":suffering:");
+                   await e.Channel.SendMessage("What the fuck are you talking about? \n🤔🤔🤔🤔🤔🤔🤔🤔");
                });
 
             commands.CreateCommand("hentai") //posts random hentai
