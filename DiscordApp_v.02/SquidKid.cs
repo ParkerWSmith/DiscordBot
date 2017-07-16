@@ -18,6 +18,8 @@ namespace DiscordApp_v._02
         Random rand;
 
         string[] goodQuote;
+        string[] randOra;
+        string[] randMuda;
 
         public SquidKid()
         {
@@ -47,6 +49,28 @@ namespace DiscordApp_v._02
 
             };
 
+            randOra = new string[]  //random ora
+            {
+                "Ora!",
+                "Ora, Ora, Ora!",
+                "Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora!",
+                "Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, OraOra, Ora, Ora, Ora!",
+                "Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, OraOra, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora!",
+                "ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA!",
+                "http://i.imgur.com/B6oVdNF.gif"
+            };
+
+            randMuda = new string[]  //random muda
+            {
+                "Muda!",
+                "Muda, Muda, Muda!",
+                "Muda, Muda, Muda, Muda, Muda, Muda!",
+                "Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda!",
+                "Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda!",
+                "MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA!",
+                "https://img.fireden.net/a/image/1452/48/1452482045855.gif"
+            };
+
             discord = new DiscordClient(x =>
             {
                 x.LogLevel = LogSeverity.Info;
@@ -59,11 +83,11 @@ namespace DiscordApp_v._02
                 x.AllowMentionPrefix = true;
             });
 
-
+            
 
             commands = discord.GetService<CommandService>();
 
-            commands.CreateCommand("Hello") //Hi
+            commands.CreateCommand("hello") //Hi
                 .Do(async (e) =>
                 {
                     await e.Channel.SendMessage("P-please don't message me at random like that. O///O");
@@ -72,7 +96,7 @@ namespace DiscordApp_v._02
             commands.CreateCommand("help") //Help
                 .Do(async (e) =>
                 {
-                    await e.Channel.SendMessage(" Hello - Say Hi \nName - Bots name \nStatus - Is the bot live  \nkiss - Kiss the bot  \nhentai - post from the hentai folder \ngayfur - Post from the gay folder  \nquote - Posts a classic quote ");
+                    await e.Channel.SendMessage(" Hello - Say Hi \nName - Bots name \nStatus - Is the bot live  \nkiss - Kiss the bot  \nhentai - post from the hentai folder \ngayfur - Post from the gay folder  \nquote - Posts a classic quote \nora - Jotaro \nmuda - DIO");
                 });
 
             commands.CreateCommand("Status") //Alive or not
@@ -93,10 +117,10 @@ namespace DiscordApp_v._02
                    await e.Channel.SendMessage("Kyaaaaa~");
                });
 
-            commands.CreateCommand("kill_me") //Posts Emote
+            commands.CreateCommand("think") //Posts Thinking and message
                .Do(async (e) =>
                {
-                   await e.Channel.SendMessage(":suffering:");
+                   await e.Channel.SendMessage("What the fuck are you talking about? \n🤔🤔🤔🤔🤔🤔🤔🤔");
                });
 
             commands.CreateCommand("hentai") //posts random hentai
@@ -111,12 +135,34 @@ namespace DiscordApp_v._02
                      await e.Channel.SendFile(@"gay\" + furry[randomFurry.Next(0, furry.Length)].Name);
                  });
 
+            commands.CreateCommand("website") //Information on the website
+                .Do(async (e) =>
+                {
+                    await e.Channel.SendMessage("Information on the big up and coming Ebay for weebs can be found here.  \nhttps://github.com/ParkerWSmith/Weebsite");
+                });
+
             commands.CreateCommand("quote")  //Quote Function
                         .Do(async (e) =>
                         {
                             int randomQuoteIndex = rand.Next(goodQuote.Length);
                             string quoteToPost = goodQuote[randomQuoteIndex];
                             await e.Channel.SendMessage(quoteToPost);
+                        });
+
+            commands.CreateCommand("ora")  //Ora Function
+                        .Do(async (e) =>
+                        {
+                            int randomOraIndex = rand.Next(randOra.Length);
+                            string oraToPost = randOra[randomOraIndex];
+                            await e.Channel.SendMessage(oraToPost);
+                        });
+
+            commands.CreateCommand("muda")  //Muda Function
+                        .Do(async (e) =>
+                        {
+                            int randomMudaIndex = rand.Next(randMuda.Length);
+                            string mudaToPost = randMuda[randomMudaIndex];
+                            await e.Channel.SendMessage(mudaToPost);
                         });
 
             discord.ExecuteAndWait(async () =>
