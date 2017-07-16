@@ -18,6 +18,8 @@ namespace DiscordApp_v._02
         Random rand;
 
         string[] goodQuote;
+        string[] randOra;
+        string[] randMuda;
 
         public SquidKid()
         {
@@ -45,6 +47,26 @@ namespace DiscordApp_v._02
                 "FINLAND - Jim Nordberg, ALL THE FUCKING TIME",
                 "Well when I was in... - Parker Smith, ALL THE FUCKING TIME"
 
+            };
+
+            randOra = new string[]  //random ora
+            {
+                "Ora!",
+                "Ora, Ora, Ora!",
+                "Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora!",
+                "Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, OraOra, Ora, Ora, Ora!",
+                "Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, OraOra, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora!",
+                "http://i.imgur.com/B6oVdNF.gif"
+            };
+
+            randMuda = new string[]  //random muda
+            {
+                "Muda!",
+                "Muda, Muda, Muda!",
+                "Muda, Muda, Muda, Muda, Muda, Muda!",
+                "Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda!",
+                "Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda!",
+                "https://img.fireden.net/a/image/1452/48/1452482045855.gif"
             };
 
             discord = new DiscordClient(x =>
@@ -123,6 +145,22 @@ namespace DiscordApp_v._02
                             int randomQuoteIndex = rand.Next(goodQuote.Length);
                             string quoteToPost = goodQuote[randomQuoteIndex];
                             await e.Channel.SendMessage(quoteToPost);
+                        });
+
+            commands.CreateCommand("ora")  //Ora Function
+                        .Do(async (e) =>
+                        {
+                            int randomOraIndex = rand.Next(randOra.Length);
+                            string oraToPost = randOra[randomOraIndex];
+                            await e.Channel.SendMessage(oraToPost);
+                        });
+
+            commands.CreateCommand("muda")  //Muda Function
+                        .Do(async (e) =>
+                        {
+                            int randomMudaIndex = rand.Next(randMuda.Length);
+                            string mudaToPost = randMuda[randomMudaIndex];
+                            await e.Channel.SendMessage(mudaToPost);
                         });
 
             discord.ExecuteAndWait(async () =>
