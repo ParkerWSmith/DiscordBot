@@ -35,6 +35,10 @@ namespace DiscordApp_v._02
             FileInfo[] furry = fur.GetFiles("*.jpg");
             Random randomFurry = new Random();
 
+            DirectoryInfo die = new DirectoryInfo(Directory.GetCurrentDirectory() + @"\roll"); //Random function for the roll command
+            FileInfo[] dice = die.GetFiles("*.png");
+            Random randomDice = new Random();
+
             goodQuote = new string[]  //Quotes for the quote function
             {
                 "I'm 15 minutes from a felony. - Parker Smith, 2017",
@@ -57,7 +61,7 @@ namespace DiscordApp_v._02
                 "Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, OraOra, Ora, Ora, Ora!",
                 "Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, OraOra, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora!",
                 "ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA!",
-                "http://i.imgur.com/B6oVdNF.gif"
+                "https://i.imgur.com/YNAOKlC.gif"
             };
 
             randMuda = new string[]  //random muda
@@ -68,8 +72,10 @@ namespace DiscordApp_v._02
                 "Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda!",
                 "Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda!",
                 "MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA!",
-                "https://img.fireden.net/a/image/1452/48/1452482045855.gif"
+                "http://i.imgur.com/1mSr2EU.gif"
             };
+
+         
 
             discord = new DiscordClient(x =>
             {
@@ -84,7 +90,6 @@ namespace DiscordApp_v._02
             });
 
             
-
             commands = discord.GetService<CommandService>();
 
             commands.CreateCommand("hello") //Hi
@@ -96,16 +101,16 @@ namespace DiscordApp_v._02
             commands.CreateCommand("help") //Help
                 .Do(async (e) =>
                 {
-                    await e.Channel.SendMessage(" Hello - Say Hi \nName - Bots name \nStatus - Is the bot live  \nkiss - Kiss the bot  \nhentai - post from the hentai folder \ngayfur - Post from the gay folder  \nquote - Posts a classic quote \nora - Jotaro \nmuda - DIO");
+                    await e.Channel.SendMessage(" hello - Say Hi \nname - Bots name \nstatus - Is the bot live  \nkiss - Kiss the bot  \nhentai - post from the hentai folder \ngayfur - Post from the gay folder  \nquote - Posts a classic quote \nora - Jotaro \nmuda - DIO \nroll - Rolls a d20 \ncalc - Simple calculator");
                 });
 
-            commands.CreateCommand("Status") //Alive or not
+            commands.CreateCommand("status") //Alive or not
                 .Do(async (e) =>
                 {
                     await e.Channel.SendMessage("Pls be nice to me while I am in development.");
                 });
 
-            commands.CreateCommand("Name") //What is the bots name
+            commands.CreateCommand("name") //What is the bots name
                .Do(async (e) =>
                {
                    await e.Channel.SendMessage("I will go by SquidKid when I am up and running.");
@@ -135,7 +140,48 @@ namespace DiscordApp_v._02
                      await e.Channel.SendFile(@"gay\" + furry[randomFurry.Next(0, furry.Length)].Name);
                  });
 
-            commands.CreateCommand("website") //Information on the website
+            commands.CreateCommand("roll").Parameter("sample.text", ParameterType.Multiple) //posts random d20
+                 .Do(async (e) =>
+                 {
+                     await e.Channel.SendFile(@"roll\" + dice[randomDice.Next(0, dice.Length)].Name);
+                 });
+
+            commands.CreateCommand("calc").Parameter("operators", ParameterType.Multiple).Do(async (e) =>
+            {
+                string operat = e.Args[1];
+                float number1 = float.Parse(e.Args[0]);
+                float number2 = float.Parse(e.Args[2]);
+                float solution;
+
+                if (operat == "+")
+                {
+                    solution = number1 + number2;
+                    await e.Channel.SendMessage(string.Format("{0}", solution));
+                }
+                else if (operat == "-")
+                {
+                    solution = number1 - number2;
+                    await e.Channel.SendMessage(string.Format("{0}", solution));
+                }
+                else if (operat == "/")
+                {
+                    solution = number1 / number2;
+                    await e.Channel.SendMessage(string.Format("{0}", solution));
+                }
+                else if (operat == "*")
+                {
+                    solution = number1 * number2;
+                    await e.Channel.SendMessage(string.Format("{0}", solution));
+                }
+                else if (operat != "*" || operat != "/" || operat != "+" || operat != "-")
+                {
+                    await e.Channel.SendMessage("Please use a valid operator: +, -, *, /");
+                }
+
+            });
+
+
+           commands.CreateCommand("website") //Information on the website
                 .Do(async (e) =>
                 {
                     await e.Channel.SendMessage("Information on the big up and coming Ebay for weebs can be found here.  \nhttps://github.com/ParkerWSmith/Weebsite");
