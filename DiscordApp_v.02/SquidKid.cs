@@ -20,7 +20,6 @@ namespace DiscordApp_v._02
         string[] goodQuote;
         string[] randOra;
         string[] randMuda;
-        string[] rollNat;
 
         public SquidKid()
         {
@@ -35,6 +34,10 @@ namespace DiscordApp_v._02
             DirectoryInfo fur = new DirectoryInfo(Directory.GetCurrentDirectory() + @"\gay"); //Random function for the furry command
             FileInfo[] furry = fur.GetFiles("*.jpg");
             Random randomFurry = new Random();
+
+            DirectoryInfo die = new DirectoryInfo(Directory.GetCurrentDirectory() + @"\roll"); //Random function for the roll command
+            FileInfo[] dice = die.GetFiles("*.png");
+            Random randomDice = new Random();
 
             goodQuote = new string[]  //Quotes for the quote function
             {
@@ -58,7 +61,7 @@ namespace DiscordApp_v._02
                 "Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, OraOra, Ora, Ora, Ora!",
                 "Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, OraOra, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora!",
                 "ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA!",
-                "http://i.imgur.com/B6oVdNF.gif"
+                "https://i.imgur.com/YNAOKlC.gif"
             };
 
             randMuda = new string[]  //random muda
@@ -69,32 +72,10 @@ namespace DiscordApp_v._02
                 "Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda!",
                 "Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda!",
                 "MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA!",
-                "https://img.fireden.net/a/image/1452/48/1452482045855.gif"
+                "http://i.imgur.com/1mSr2EU.gif"
             };
 
-            rollNat = new string[] //Rolls 1-20
-            {
-                "1 \nWhat the fuck are you doing",
-                "2",
-                "3",
-                "4",
-                "5",
-                "6",
-                "7",
-                "8",
-                "9",
-                "10",
-                "11",
-                "12",
-                "13",
-                "14",
-                "15",
-                "16",
-                "17",
-                "18",
-                "19",
-                "20"
-            };
+         
 
             discord = new DiscordClient(x =>
             {
@@ -109,7 +90,6 @@ namespace DiscordApp_v._02
             });
 
             
-
             commands = discord.GetService<CommandService>();
 
             commands.CreateCommand("hello") //Hi
@@ -160,6 +140,12 @@ namespace DiscordApp_v._02
                      await e.Channel.SendFile(@"gay\" + furry[randomFurry.Next(0, furry.Length)].Name);
                  });
 
+            commands.CreateCommand("roll") //posts random d20
+                 .Do(async (e) =>
+                 {
+                     await e.Channel.SendFile(@"roll\" + dice[randomDice.Next(0, dice.Length)].Name);
+                 });
+
             commands.CreateCommand("website") //Information on the website
                 .Do(async (e) =>
                 {
@@ -172,14 +158,6 @@ namespace DiscordApp_v._02
                             int randomQuoteIndex = rand.Next(goodQuote.Length);
                             string quoteToPost = goodQuote[randomQuoteIndex];
                             await e.Channel.SendMessage(quoteToPost);
-                        });
-
-            commands.CreateCommand("roll")  //Quote Function
-                        .Do(async (e) =>
-                        {
-                            int randomRollIndex = rand.Next(rollNat.Length);
-                            string rollToPost = rollNat[randomRollIndex];
-                            await e.Channel.SendMessage(rollToPost);
                         });
 
             commands.CreateCommand("ora")  //Ora Function
