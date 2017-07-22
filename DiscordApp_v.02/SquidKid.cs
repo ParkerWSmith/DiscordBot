@@ -20,6 +20,7 @@ namespace DiscordApp_v._02
         string[] goodQuote;
         string[] randOra;
         string[] randMuda;
+        string[] rollNat;
 
         public SquidKid()
         {
@@ -71,6 +72,30 @@ namespace DiscordApp_v._02
                 "https://img.fireden.net/a/image/1452/48/1452482045855.gif"
             };
 
+            rollNat = new string[] //Rolls 1-20
+            {
+                "1 \nWhat the fuck are you doing",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "10",
+                "11",
+                "12",
+                "13",
+                "14",
+                "15",
+                "16",
+                "17",
+                "18",
+                "19",
+                "20"
+            };
+
             discord = new DiscordClient(x =>
             {
                 x.LogLevel = LogSeverity.Info;
@@ -96,7 +121,7 @@ namespace DiscordApp_v._02
             commands.CreateCommand("help") //Help
                 .Do(async (e) =>
                 {
-                    await e.Channel.SendMessage(" Hello - Say Hi \nName - Bots name \nStatus - Is the bot live  \nkiss - Kiss the bot  \nhentai - post from the hentai folder \ngayfur - Post from the gay folder  \nquote - Posts a classic quote \nora - Jotaro \nmuda - DIO");
+                    await e.Channel.SendMessage(" Hello - Say Hi \nName - Bots name \nStatus - Is the bot live  \nkiss - Kiss the bot  \nhentai - post from the hentai folder \ngayfur - Post from the gay folder  \nquote - Posts a classic quote \nora - Jotaro \nmuda - DIO \roll - Rolls a d20");
                 });
 
             commands.CreateCommand("Status") //Alive or not
@@ -147,6 +172,14 @@ namespace DiscordApp_v._02
                             int randomQuoteIndex = rand.Next(goodQuote.Length);
                             string quoteToPost = goodQuote[randomQuoteIndex];
                             await e.Channel.SendMessage(quoteToPost);
+                        });
+
+            commands.CreateCommand("roll")  //Quote Function
+                        .Do(async (e) =>
+                        {
+                            int randomRollIndex = rand.Next(rollNat.Length);
+                            string rollToPost = rollNat[randomRollIndex];
+                            await e.Channel.SendMessage(rollToPost);
                         });
 
             commands.CreateCommand("ora")  //Ora Function
