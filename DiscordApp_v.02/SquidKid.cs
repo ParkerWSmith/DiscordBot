@@ -21,6 +21,7 @@ namespace DiscordApp_v._02
         string[] randOra;
         string[] randMuda;
         string[] randMgs;
+        string[] randChill;
 
         public SquidKid()
         {
@@ -52,6 +53,17 @@ namespace DiscordApp_v._02
                 "https://www.youtube.com/watch?v=ZYAPgPH9hsI",
                 "https://www.youtube.com/watch?v=XI1VpElKWF8",
                 "https://www.youtube.com/watch?v=QiPon8lr48U",
+            };
+
+            randChill = new string[] //random coffee pour
+            {
+                "Yo, chill the fuck out. \n https://www.youtube.com/watch?v=2L9vFNMvIBE",
+                "Yo, chill the fuck out. \n https://www.youtube.com/watch?v=hX3j0sQ7ot8",
+                "Yo, chill the fuck out. \n https://www.youtube.com/watch?v=TUEBsOQxA90",
+                "Yo, chill the fuck out. \n https://www.youtube.com/watch?v=8fYiwMSqRyg",
+                "Yo, chill the fuck out. \n https://www.youtube.com/watch?v=EoB_LKjizOQ",
+                "Yo, chill the fuck out. \n https://www.youtube.com/watch?v=tJbVvu2AoQs",
+                "Yo, chill the fuck out. \n http://rainymood.com/watch?v=7bW75OwVXZI",
             };
 
             goodQuote = new string[]  //Quotes for the quote function
@@ -116,7 +128,7 @@ namespace DiscordApp_v._02
             commands.CreateCommand("help") //Help
                 .Do(async (e) =>
                 {
-                    await e.Channel.SendMessage(" hello - Say Hi \nname - Bots name \nstatus - Is the bot live  \nkiss - Kiss the bot  \nhentai - post from the hentai folder \ngayfur - Post from the gay folder  \nquote - Posts a classic quote \nora - Jotaro \nmuda - DIO \nroll - Rolls a d20 \ncalc - Simple calculator \nmgs - Random Song from Metal Gear Solid");
+                    await e.Channel.SendMessage(" hello - Say Hi \nname - Bots name \nstatus - Is the bot live  \nkiss - Kiss the bot  \nhentai - post from the hentai folder \ngayfur - Post from the gay folder  \nquote - Posts a classic quote \nora - Jotaro \nmuda - DIO \nroll - Rolls a d20 \ncalc - Simple calculator \nmgs - Random Song from Metal Gear Solid \nchill - Chill out");
                 });
 
             commands.CreateCommand("status") //Alive or not
@@ -222,6 +234,14 @@ namespace DiscordApp_v._02
                             int randomMudaIndex = rand.Next(randMuda.Length);
                             string mudaToPost = randMuda[randomMudaIndex];
                             await e.Channel.SendMessage(mudaToPost);
+                        });
+
+            commands.CreateCommand("chill")  //Muda Function
+                        .Do(async (e) =>
+                        {
+                            int randomChillIndex = rand.Next(randChill.Length);
+                            string chillToPost = randChill[randomChillIndex];
+                            await e.Channel.SendMessage(chillToPost);
                         });
 
             commands.CreateCommand("mgs")  //Muda Function
