@@ -29,12 +29,12 @@ namespace DiscordApp_v._02
 
 
             DirectoryInfo hen = new DirectoryInfo(Directory.GetCurrentDirectory() + @"\randumb"); //Random function for the hentai command
-            FileInfo[] hentai = hen.GetFiles("*.jpg");
+            FileInfo[] hentai = hen.GetFiles("*.*");
             Random randomHentai = new Random();
 
 
             DirectoryInfo fur = new DirectoryInfo(Directory.GetCurrentDirectory() + @"\gay"); //Random function for the furry command
-            FileInfo[] furry = fur.GetFiles("*.jpg");
+            FileInfo[] furry = fur.GetFiles("*.*");
             Random randomFurry = new Random();
 
             DirectoryInfo die = new DirectoryInfo(Directory.GetCurrentDirectory() + @"\roll"); //Random function for the roll command
