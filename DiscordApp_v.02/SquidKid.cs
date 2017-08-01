@@ -254,7 +254,7 @@ namespace DiscordApp_v._02
 
             discord.ExecuteAndWait(async () =>
             {
-                await discord.Connect("MzI5NzMwOTI0NTM3MzE1MzI5.DDfGWg.tqJUDn27CADP9err_zXZq81KJlI", TokenType.Bot);
+                await discord.Connect("MzI5NzMwOTI0NTM3MzE1MzI5.DGGW-A.MFPA1vcn0jRNyHf8XEbShEyZlDs", TokenType.Bot);
             });
 
         }
