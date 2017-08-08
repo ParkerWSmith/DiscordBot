@@ -181,6 +181,9 @@ namespace DiscordApp_v._02
                  .Do(async (e) =>
                  {
                      await e.Channel.SendFile(@"stand\" + user[randomUser.Next(0, user.Length)].Name);
+                     e.Channel.SendFile("extras/vs.jpg");
+                     e.Channel.SendFile(@"stand\" + user[randomUser.Next(0, user.Length)].Name);
+
                  });
 
             commands.CreateCommand("calc").Parameter("operators", ParameterType.Multiple).Do(async (e) =>
