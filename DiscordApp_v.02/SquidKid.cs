@@ -41,7 +41,11 @@ namespace DiscordApp_v._02
             FileInfo[] dice = die.GetFiles("*.png");
             Random randomDice = new Random();
 
-            randMgs= new string[] // MSG Music
+            DirectoryInfo stand = new DirectoryInfo(Directory.GetCurrentDirectory() + @"\stand"); //Random function for the stand command
+            FileInfo[] user = stand.GetFiles("*.*");
+            Random randomUser = new Random();
+
+            randMgs = new string[] // MSG Music
             {
                 "https://www.youtube.com/watch?v=F9hagVL-__c",
                 "https://www.youtube.com/watch?v=hULJu2mcU6s",
@@ -173,6 +177,12 @@ namespace DiscordApp_v._02
                      await e.Channel.SendFile(@"roll\" + dice[randomDice.Next(0, dice.Length)].Name);
                  });
 
+            commands.CreateCommand("stand") //posts random stand
+                 .Do(async (e) =>
+                 {
+                     await e.Channel.SendFile(@"stand\" + user[randomUser.Next(0, user.Length)].Name);
+                 });
+
             commands.CreateCommand("calc").Parameter("operators", ParameterType.Multiple).Do(async (e) =>
             {
                 string operat = e.Args[1];
@@ -236,7 +246,7 @@ namespace DiscordApp_v._02
                             await e.Channel.SendMessage(mudaToPost);
                         });
 
-            commands.CreateCommand("chill")  //Muda Function
+            commands.CreateCommand("chill")  //Chillllll
                         .Do(async (e) =>
                         {
                             int randomChillIndex = rand.Next(randChill.Length);
@@ -244,12 +254,18 @@ namespace DiscordApp_v._02
                             await e.Channel.SendMessage(chillToPost);
                         });
 
-            commands.CreateCommand("mgs")  //Muda Function
+            commands.CreateCommand("mgs")  //Metal Gear Music
                         .Do(async (e) =>
                         {
                             int randomMgsIndex = rand.Next(randMgs.Length);
                             string mgsToPost = randMgs[randomMgsIndex];
                             await e.Channel.SendMessage(mgsToPost);
+                        });
+
+            commands.CreateCommand("3dpd")  //live-search porn Function
+                        .Do(async (e) =>
+                        {
+                            await e.Channel.SendMessage("Porn live search via pornmd.  \nhttps://www.pornmd.com/live-search");
                         });
 
             discord.ExecuteAndWait(async () =>
