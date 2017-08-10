@@ -45,6 +45,10 @@ namespace DiscordApp_v._02
             FileInfo[] user = stand.GetFiles("*.*");
             Random randomUser = new Random();
 
+            DirectoryInfo local = new DirectoryInfo(Directory.GetCurrentDirectory() + @"\stage"); //Random function for the stand command
+            FileInfo[] stage = local.GetFiles("*.*");
+            Random randomStage = new Random();
+
             randMgs = new string[] // MSG Music
             {
                 "https://www.youtube.com/watch?v=F9hagVL-__c",
@@ -183,6 +187,8 @@ namespace DiscordApp_v._02
                      await e.Channel.SendFile(@"stand\" + user[randomUser.Next(0, user.Length)].Name);
                      e.Channel.SendFile("extras/vs.jpg");
                      e.Channel.SendFile(@"stand\" + user[randomUser.Next(0, user.Length)].Name);
+                     e.Channel.SendFile("extras/at.png");
+                     e.Channel.SendFile(@"stage\" + stage[randomUser.Next(0, stage.Length)].Name);
 
                  });
 
