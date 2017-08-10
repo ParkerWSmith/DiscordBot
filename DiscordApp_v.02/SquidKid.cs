@@ -136,7 +136,7 @@ namespace DiscordApp_v._02
             commands.CreateCommand("help") //Help
                 .Do(async (e) =>
                 {
-                    await e.Channel.SendMessage(" hello - Say Hi \nname - Bots name \nstatus - Is the bot live  \nkiss - Kiss the bot  \nhentai - post from the hentai folder \ngayfur - Post from the gay folder  \nquote - Posts a classic quote \nora - Jotaro \nmuda - DIO \nroll - Rolls a d20 \ncalc - Simple calculator \nmgs - Random Song from Metal Gear Solid \nchill - Chill out");
+                    await e.Channel.SendMessage(" hello - Say Hi \nname - Bots name \nstatus - Is the bot live  \nkiss - Kiss the bot  \nhentai - post from the hentai folder \ngayfur - Post from the gay folder  \nquote - Posts a classic quote \nora - Jotaro \nmuda - DIO \nroll - Rolls a d20 \ncalc - Simple calculator \nmgs - Random Song from Metal Gear Solid \nchill - Chill out \nstand - stand v stand battle \nstage - stage for the stand command");
                 });
 
             commands.CreateCommand("status") //Alive or not
@@ -188,9 +188,13 @@ namespace DiscordApp_v._02
                      e.Channel.SendFile("extras/vs.jpg");
                      e.Channel.SendFile(@"stand\" + user[randomUser.Next(0, user.Length)].Name);
                      e.Channel.SendFile("extras/at.png");
-                     e.Channel.SendFile(@"stage\" + stage[randomUser.Next(0, stage.Length)].Name);
-
                  });
+
+            commands.CreateCommand("stage") //posts stage for jojo command
+                .Do(async (e) =>
+            {
+                await e.Channel.SendFile(@"stage\" + stage[randomUser.Next(0, stage.Length)].Name);
+            });
 
             commands.CreateCommand("calc").Parameter("operators", ParameterType.Multiple).Do(async (e) =>
             {
