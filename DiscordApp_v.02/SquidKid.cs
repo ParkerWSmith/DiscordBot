@@ -187,7 +187,6 @@ namespace DiscordApp_v._02
                      await e.Channel.SendFile(@"stand\" + user[randomUser.Next(0, user.Length)].Name);
                      e.Channel.SendFile("extras/vs.jpg");
                      e.Channel.SendFile(@"stand\" + user[randomUser.Next(0, user.Length)].Name);
-                     e.Channel.SendFile("extras/at.png");
                  });
 
             commands.CreateCommand("stage") //posts stage for jojo command
