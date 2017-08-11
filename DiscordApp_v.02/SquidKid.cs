@@ -49,6 +49,10 @@ namespace DiscordApp_v._02
             FileInfo[] stage = local.GetFiles("*.*");
             Random randomStage = new Random();
 
+            DirectoryInfo poke = new DirectoryInfo(Directory.GetCurrentDirectory() + @"\pokemon"); //Random function for the stand command
+            FileInfo[] ball = poke.GetFiles("*.*");
+            Random randomPoke = new Random();
+
             randMgs = new string[] // MSG Music
             {
                 "https://www.youtube.com/watch?v=F9hagVL-__c",
@@ -187,6 +191,14 @@ namespace DiscordApp_v._02
                      await e.Channel.SendFile(@"stand\" + user[randomUser.Next(0, user.Length)].Name);
                      e.Channel.SendFile("extras/vs.jpg");
                      e.Channel.SendFile(@"stand\" + user[randomUser.Next(0, user.Length)].Name);
+                 });
+
+            commands.CreateCommand("pokemon") //posts random stand
+                 .Do(async (e) =>
+                 {
+                     await e.Channel.SendFile(@"pokemon\" + ball[randomUser.Next(0, ball.Length)].Name);
+                     e.Channel.SendFile("extras/vs.jpg");
+                     e.Channel.SendFile(@"pokemon\" + ball[randomUser.Next(0, ball.Length)].Name);
                  });
 
             commands.CreateCommand("stage") //posts stage for jojo command
