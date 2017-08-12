@@ -189,7 +189,7 @@ namespace DiscordApp_v._02
                  .Do(async (e) =>
                  {
                      await e.Channel.SendFile(@"stand\" + user[randomUser.Next(0, user.Length)].Name);
-                     e.Channel.SendFile("extras/vs.jpg");
+                     e.Channel.SendFile("extras/vs.png");
                      e.Channel.SendFile(@"stand\" + user[randomUser.Next(0, user.Length)].Name);
                  });
 
@@ -197,7 +197,7 @@ namespace DiscordApp_v._02
                  .Do(async (e) =>
                  {
                      await e.Channel.SendFile(@"pokemon\" + ball[randomUser.Next(0, ball.Length)].Name);
-                     e.Channel.SendFile("extras/vs.jpg");
+                     e.Channel.SendFile("extras/vs.png");
                      e.Channel.SendFile(@"pokemon\" + ball[randomUser.Next(0, ball.Length)].Name);
                  });
 

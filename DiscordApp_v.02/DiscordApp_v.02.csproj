@@ -115,7 +115,7 @@
     <Content Include="extras\at.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="extras\vs.jpg">
+    <Content Include="extras\vs.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="gay\gay %28100%29.jpg">
