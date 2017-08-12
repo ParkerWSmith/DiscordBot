@@ -45,6 +45,14 @@ namespace DiscordApp_v._02
             FileInfo[] user = stand.GetFiles("*.*");
             Random randomUser = new Random();
 
+            DirectoryInfo local = new DirectoryInfo(Directory.GetCurrentDirectory() + @"\stage"); //Random function for the stand command
+            FileInfo[] stage = local.GetFiles("*.*");
+            Random randomStage = new Random();
+
+            DirectoryInfo poke = new DirectoryInfo(Directory.GetCurrentDirectory() + @"\pokemon"); //Random function for the stand command
+            FileInfo[] ball = poke.GetFiles("*.*");
+            Random randomPoke = new Random();
+
             randMgs = new string[] // MSG Music
             {
                 "https://www.youtube.com/watch?v=F9hagVL-__c",
@@ -132,7 +140,7 @@ namespace DiscordApp_v._02
             commands.CreateCommand("help") //Help
                 .Do(async (e) =>
                 {
-                    await e.Channel.SendMessage(" hello - Say Hi \nname - Bots name \nstatus - Is the bot live  \nkiss - Kiss the bot  \nhentai - post from the hentai folder \ngayfur - Post from the gay folder  \nquote - Posts a classic quote \nora - Jotaro \nmuda - DIO \nroll - Rolls a d20 \ncalc - Simple calculator \nmgs - Random Song from Metal Gear Solid \nchill - Chill out");
+                    await e.Channel.SendMessage(" hello - Say Hi \nname - Bots name \nstatus - Is the bot live  \nkiss - Kiss the bot  \nhentai - post from the hentai folder \ngayfur - Post from the gay folder  \nquote - Posts a classic quote \nora - Jotaro \nmuda - DIO \nroll - Rolls a d20 \ncalc - Simple calculator \nmgs - Random Song from Metal Gear Solid \nchill - Chill out \nstand - stand v stand battle \nstage - stage for the stand command");
                 });
 
             commands.CreateCommand("status") //Alive or not
@@ -181,10 +189,23 @@ namespace DiscordApp_v._02
                  .Do(async (e) =>
                  {
                      await e.Channel.SendFile(@"stand\" + user[randomUser.Next(0, user.Length)].Name);
-                     e.Channel.SendFile("extras/vs.jpg");
+                     e.Channel.SendFile("extras/vs.png");
                      e.Channel.SendFile(@"stand\" + user[randomUser.Next(0, user.Length)].Name);
-
                  });
+
+            commands.CreateCommand("pokemon") //posts random stand
+                 .Do(async (e) =>
+                 {
+                     await e.Channel.SendFile(@"pokemon\" + ball[randomUser.Next(0, ball.Length)].Name);
+                     e.Channel.SendFile("extras/vs.png");
+                     e.Channel.SendFile(@"pokemon\" + ball[randomUser.Next(0, ball.Length)].Name);
+                 });
+
+            commands.CreateCommand("stage") //posts stage for jojo command
+                .Do(async (e) =>
+            {
+                await e.Channel.SendFile(@"stage\" + stage[randomUser.Next(0, stage.Length)].Name);
+            });
 
             commands.CreateCommand("calc").Parameter("operators", ParameterType.Multiple).Do(async (e) =>
             {
