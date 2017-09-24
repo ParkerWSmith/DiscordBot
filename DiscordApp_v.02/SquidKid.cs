@@ -45,11 +45,11 @@ namespace DiscordApp_v._02
             FileInfo[] user = stand.GetFiles("*.*");
             Random randomUser = new Random();
 
-            DirectoryInfo local = new DirectoryInfo(Directory.GetCurrentDirectory() + @"\stage"); //Random function for the stand command
+            DirectoryInfo local = new DirectoryInfo(Directory.GetCurrentDirectory() + @"\stage"); //Random function for the stage command
             FileInfo[] stage = local.GetFiles("*.*");
             Random randomStage = new Random();
 
-            DirectoryInfo poke = new DirectoryInfo(Directory.GetCurrentDirectory() + @"\pokemon"); //Random function for the stand command
+            DirectoryInfo poke = new DirectoryInfo(Directory.GetCurrentDirectory() + @"\pokemon"); //Random function for the pokemon command
             FileInfo[] ball = poke.GetFiles("*.*");
             Random randomPoke = new Random();
 
@@ -89,7 +89,8 @@ namespace DiscordApp_v._02
                 "I'm a literal nobody. - Parker Smith, 2016",
                 "FINLAND - Jim Nordberg, ALL THE FUCKING TIME",
                 "Well when I was in... - Parker Smith, ALL THE FUCKING TIME",
-                "When you understand why, then you'll know. - Parker Smith, 2017"
+                "When you understand why, then you'll know. - Parker Smith, 2017",
+                "I like to live through my own photos. - Mohamed Aden, 2016"
 
             };
 
@@ -190,7 +191,7 @@ namespace DiscordApp_v._02
                  .Do(async (e) =>
                  {
                      await e.Channel.SendFile(@"stand\" + user[randomUser.Next(0, user.Length)].Name);
-                     e.Channel.SendFile("await e.Channel.SendFile");
+                     e.Channel.SendFile("extras/vs.png");
                      e.Channel.SendFile(@"stand\" + user[randomUser.Next(0, user.Length)].Name);
                  });
 
