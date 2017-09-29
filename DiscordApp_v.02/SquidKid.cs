@@ -45,11 +45,11 @@ namespace DiscordApp_v._02
             FileInfo[] user = stand.GetFiles("*.*");
             Random randomUser = new Random();
 
-            DirectoryInfo local = new DirectoryInfo(Directory.GetCurrentDirectory() + @"\stage"); //Random function for the stand command
+            DirectoryInfo local = new DirectoryInfo(Directory.GetCurrentDirectory() + @"\stage"); //Random function for the stage command
             FileInfo[] stage = local.GetFiles("*.*");
             Random randomStage = new Random();
 
-            DirectoryInfo poke = new DirectoryInfo(Directory.GetCurrentDirectory() + @"\pokemon"); //Random function for the stand command
+            DirectoryInfo poke = new DirectoryInfo(Directory.GetCurrentDirectory() + @"\pokemon"); //Random function for the pokemon command
             FileInfo[] ball = poke.GetFiles("*.*");
             Random randomPoke = new Random();
 
@@ -88,7 +88,9 @@ namespace DiscordApp_v._02
                 "I will go to Metacon 2016. - Brennan Schneider, 2016",
                 "I'm a literal nobody. - Parker Smith, 2016",
                 "FINLAND - Jim Nordberg, ALL THE FUCKING TIME",
-                "Well when I was in... - Parker Smith, ALL THE FUCKING TIME"
+                "Well when I was in... - Parker Smith, ALL THE FUCKING TIME",
+                "When you understand why, then you'll know. - Parker Smith, 2017",
+                "I like to live through my own photos. - Mohamed Aden, 2016"
 
             };
 
@@ -140,7 +142,7 @@ namespace DiscordApp_v._02
             commands.CreateCommand("help") //Help
                 .Do(async (e) =>
                 {
-                    await e.Channel.SendMessage(" hello - Say Hi \nname - Bots name \nstatus - Is the bot live  \nkiss - Kiss the bot  \nhentai - post from the hentai folder \ngayfur - Post from the gay folder  \nquote - Posts a classic quote \nora - Jotaro \nmuda - DIO \nroll - Rolls a d20 \ncalc - Simple calculator \nmgs - Random Song from Metal Gear Solid \nchill - Chill out \nstand - stand v stand battle \nstage - stage for the stand command");
+                    await e.Channel.SendMessage(" hello - Say Hi \nname - Bots name \nstatus - Is the bot live  \nkiss - Kiss the bot  \nhentai - post from the hentai folder \ngayfur - Post from the gay folder  \nquote - Posts a classic quote \nora - Jotaro \nmuda - DIO \nroll - Rolls a d20 \ncalc - Simple calculator \nmgs - Random Song from Metal Gear Solid \nchill - Chill out \nstand - stand v stand battle \nstage - stage for the stand command \nOT - OppaiTime Invites \nbestgirl - Best girl \nbestgirlold - Older version of best girl \njello - bouncing jello \ndaki - Dakimakura Resource \nptg - Private Tracker General \nsosad - That's so sad \nqtloli - Cute Little Girls \ntravel - Travel Doc Outline \n");
                 });
 
             commands.CreateCommand("status") //Alive or not
@@ -292,9 +294,64 @@ namespace DiscordApp_v._02
                             await e.Channel.SendMessage("Porn live search via pornmd.  \nhttps://www.pornmd.com/live-search");
                         });
 
+            commands.CreateCommand("daki")  //dakimakura
+                        .Do(async (e) =>
+                        {
+                            await e.Channel.SendMessage("https://chan.sankakucomplex.com/?tags=Dakimakura&commit=Search");
+                        });
+
+            commands.CreateCommand("OT")  //oppaitime
+                        .Do(async (e) =>
+                        {
+                            await e.Channel.SendMessage("Ask Bao for an invite.");
+                        });
+
+            commands.CreateCommand("ptg")  //private tracker general
+                        .Do(async (e) =>
+                        {
+                            await e.Channel.SendMessage("lol just use piratebay bitchboi");
+                        });
+
+            commands.CreateCommand("travel")  //travel doc
+                        .Do(async (e) =>
+                        {
+                            await e.Channel.SendMessage("Misguided Travelers is for planning out trips that you will never go on with your friends! \nRemember to use Google docs for all fleshed out plans.\nOutline here:\nhttps://docs.google.com/document/d/1ofW4vZR99JbLeAq6DD9ye4OGQ598tph3Wp2zC0o0tHg/edit?usp=sharing");
+                        });
+
+            commands.CreateCommand("sosad")  //that's so very very sad
+                        .Do(async (e) =>
+                        {
+                            await e.Channel.SendMessage("https://www.youtube.com/watch?v=utddDvJ1Rvo");
+                        });
+
+            commands.CreateCommand("bestgirl")  //best girl
+                        .Do(async (e) =>
+                        {
+                            await e.Channel.SendFile("extras/bestgirl.jpg");
+                        });
+
+            commands.CreateCommand("bestgirlold")  //best girl old
+                        .Do(async (e) =>
+                        {
+                            await e.Channel.SendFile("extras/bestgirlold.jpg");
+                        });
+
+            commands.CreateCommand("jello")  //jello bounce
+                        .Do(async (e) =>
+                        {
+                            await e.Channel.SendFile("extras/jello.gif");
+                        });
+
+            commands.CreateCommand("qtloli")  //hang tight fucko
+                        .Do(async (e) =>
+                        {
+                            await e.Channel.SendMessage("Hang tight, the feds are on the way fucko.");
+                            e.Channel.SendFile("extras/fbi.png");
+                        });
+
             discord.ExecuteAndWait(async () =>
             {
-                await discord.Connect("MzI5NzMwOTI0NTM3MzE1MzI5.DGGW-A.MFPA1vcn0jRNyHf8XEbShEyZlDs", TokenType.Bot);
+                await discord.Connect("MzU3MDA2NzA4MDE2Njc2ODY3.DJjoAA.Bj-2T6ruZdIFojkqhWPqrG0e2HY", TokenType.Bot);
             });
 
         }
