@@ -90,7 +90,8 @@ namespace DiscordApp_v._02
                 "FINLAND - Jim Nordberg, ALL THE FUCKING TIME",
                 "Well when I was in... - Parker Smith, ALL THE FUCKING TIME",
                 "When you understand why, then you'll know. - Parker Smith, 2017",
-                "I like to live through my own photos. - Mohamed Aden, 2016"
+                "I like to live vicariously through my own photos. - Mohamed Aden, 2017",
+                "One is a fetish and one is gay. - Mohamed Aden, 2017"
 
             };
 
@@ -154,7 +155,7 @@ namespace DiscordApp_v._02
             commands.CreateCommand("name") //What is the bots name
                .Do(async (e) =>
                {
-                   await e.Channel.SendMessage("I will go by SquidKid when I am up and running.");
+                   await e.Channel.SendMessage("Hello, I am snail.");
                });
 
             commands.CreateCommand("kiss") //*kiss*
