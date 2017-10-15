@@ -73,13 +73,13 @@ namespace DiscordApp_v._02
                 "Niggaz money is homo, it's hard to get straight. \n https://www.youtube.com/watch?v=xKqVhcp51qM",
                 "If my manager insults me again I will be assaulting him. \n https://www.youtube.com/watch?v=ZCvTk1iA2RI",
                 "The way Kathie Lee needed Regis that's the way I need Jesus. \n https://www.youtube.com/watch?v=bGlfcbwoj40",
-                "All the mocha lattes you gotta do Pilates. \n https://www.youtube.com/watch?v=fOZwGGiOJlk",
+                "It's a party tonight and ooh she's so excited, tell me who's invited: you, your friends and my dick. \n https://www.youtube.com/watch?v=fOZwGGiOJlk",
                 "Mayonnaise-colored Benz, I push Miracle Whips \n https://www.youtube.com/watch?v=gt0a4A45edg",
                 "And yer ass barely passed any and every class, looking at every ass, cheated on every test \n https://www.youtube.com/watch?v=QfUuKPceYVo",
                 "Heard they'd do anything for a Klondike well, I'd do anything for a blonde dyke \n https://www.youtube.com/watch?v=CKkafaZL4IQ",
                 "Ye, keep making that, keep making that, Keep making that platinum and gold for me! \n https://www.youtube.com/watch?v=FvSCUjFWkb0",
                 "Cause when she leave yo ass she gone leave with half \n https://www.youtube.com/watch?v=RogC-7p_F5Y",
-                "Dark Fantasy \n https://www.youtube.com/watch?v=lUSJ_MeX4Io",
+                "The plan was to drink until the pain over but what's worse, the pain or the hangover? \n https://www.youtube.com/watch?v=lUSJ_MeX4Io",
                 "I don’t need your pussy, bitch, I’m on my own dick. \n https://www.youtube.com/watch?v=nfef5WqC85A",
                 "The plan was to drink until the pain over but what's worse, the pain or the hangover? /n https://www.youtube.com/watch?v=lUSJ_MeX4Io",
                 "Have you ever had sex with a pharaoh? Put the pussy in a sarcophagus! \n https://www.youtube.com/watch?v=yctBp6n8ROo",
@@ -164,7 +164,7 @@ namespace DiscordApp_v._02
             commands.CreateCommand("help") //Help
                 .Do(async (e) =>
                 {
-                    await e.Channel.SendMessage(" hello - Say Hi \nname - Bots name \nstatus - Is the bot live  \nkiss - Kiss the bot  \nhentai - post from the hentai folder \ngayfur - Post from the gay folder  \nquote - Posts a classic quote \nora - Jotaro \nmuda - DIO \nroll - Rolls a d20 \ncalc - Simple calculator \nmgs - Random Song from Metal Gear Solid \nchill - Chill out \nstand - stand v stand battle \nstage - stage for the stand command \nOT - OppaiTime Invites \nbestgirl - Best girl \nbestgirlold - Older version of best girl \njello - bouncing jello \ndaki - Dakimakura Resource \nptg - Private Tracker General \nsosad - That's so sad \nqtloli - Cute Little Girls \ntravel - Travel Doc Outline \nahitsthenewnow - Kanye Command");
+                    await e.Channel.SendMessage(" hello - Say Hi \nname - Bots name \nstatus - Is the bot live  \nkiss - Kiss the bot  \nhentai - post from the hentai folder \ngayfur - Post from the gay folder  \nquote - Posts a classic quote \nora - Jotaro \nmuda - DIO \nroll - Rolls a d20 \ncalc - Simple calculator \nmgs - Random Song from Metal Gear Solid \nchill - Chill out \nstand - stand v stand battle \nstage - stage for the stand command \nOT - OppaiTime Invites \nbestgirl - Best girl \nbestgirlold - Older version of best girl \njello - bouncing jello \ndaki - Dakimakura Resource \nptg - Private Tracker General \nsosad - That's so sad \nqtloli - Cute Little Girls \ntravel - Travel Doc Outline \nahitsthenewnow - Kanye Command \nlife - in the end it doesn't even matter");
                 });
 
             commands.CreateCommand("status") //Alive or not
@@ -370,6 +370,12 @@ namespace DiscordApp_v._02
                         .Do(async (e) =>
                         {
                             await e.Channel.SendFile("extras/jello.gif");
+                        });
+
+            commands.CreateCommand("life")  //life gif
+                        .Do(async (e) =>
+                        {
+                            await e.Channel.SendFile("extras/life.gif");
                         });
 
             commands.CreateCommand("qtloli")  //hang tight fucko
