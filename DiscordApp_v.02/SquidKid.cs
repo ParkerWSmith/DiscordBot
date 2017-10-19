@@ -164,13 +164,13 @@ namespace DiscordApp_v._02
             commands.CreateCommand("help") //Help
                 .Do(async (e) =>
                 {
-                    await e.Channel.SendMessage(" hello - Say Hi \nname - Bots name \nstatus - Is the bot live  \nkiss - Kiss the bot  \nhentai - post from the hentai folder \ngayfur - Post from the gay folder  \nquote - Posts a classic quote \nora - Jotaro \nmuda - DIO \nroll - Rolls a d20 \ncalc - Simple calculator \nmgs - Random Song from Metal Gear Solid \nchill - Chill out \nstand - stand v stand battle \nstage - stage for the stand command \nOT - OppaiTime Invites \nbestgirl - Best girl \nbestgirlold - Older version of best girl \njello - bouncing jello \ndaki - Dakimakura Resource \nptg - Private Tracker General \nsosad - That's so sad \nqtloli - Cute Little Girls \ntravel - Travel Doc Outline \nahitsthenewnow - Kanye Command \nlife - in the end it doesn't even matter");
+                    await e.Channel.SendMessage(" hello - Say Hi \nname - Bots name \nabout - Bot info  \nkiss - Kiss the bot  \nhentai - post from the hentai folder \ngayfur - Post from the gay folder  \nquote - Posts a classic quote \nora - Jotaro \nmuda - DIO \nroll - Rolls a d20 \ncalc - Simple calculator \nmgs - Random Song from Metal Gear Solid \nchill - Chill out \nstand - stand v stand battle \nstage - stage for the stand command \nOT - OppaiTime Invites \nbestgirl - Best girl \nbestgirlold - Older version of best girl \njello - bouncing jello \ndaki - Dakimakura Resource \nptg - Private Tracker General \nsosad - That's so sad \nqtloli - Cute Little Girls \ntravel - Travel Doc Outline \nahitsthenewnow - Kanye Command \nlife - in the end it doesn't even matter \nplex - Server run out of Chronos' basement");
                 });
 
-            commands.CreateCommand("status") //Alive or not
+            commands.CreateCommand("about") //about snail
                 .Do(async (e) =>
                 {
-                    await e.Channel.SendMessage("Pls be nice to me while I am in development.");
+                    await e.Channel.SendMessage("Hi, I'm Snail! Most of my functions are useless but some of them are fun. \nCode can be found here (https://github.com/ParkerWSmith/DiscordBot) \nIf you want to add me to your server you can by following this link, \nhttps://discordapp.com/oauth2/authorize?&client_id=357006708016676867&scope=bot&permissions=0 \n\nNadeko a shit. A. SHIT.");
                 });
 
             commands.CreateCommand("name") //What is the bots name
@@ -334,6 +334,12 @@ namespace DiscordApp_v._02
                         .Do(async (e) =>
                         {
                             await e.Channel.SendMessage("Ask Bao for an invite.");
+                        });
+
+            commands.CreateCommand("plex")  //plex server
+                        .Do(async (e) =>
+                        {
+                            await e.Channel.SendMessage("The Plex server is invite only. Ask Bao.");
                         });
 
             commands.CreateCommand("ptg")  //private tracker general
