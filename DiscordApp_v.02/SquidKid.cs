@@ -23,6 +23,7 @@ namespace DiscordApp_v._02
         string[] randMgs;
         string[] randChill;
         string[] randWest;
+        string[] spongeQuote;
 
         public SquidKid()
         {
@@ -112,8 +113,38 @@ namespace DiscordApp_v._02
                 "Well when I was in... - Parker Smith, ALL THE FUCKING TIME",
                 "When you understand why, then you'll know. - Parker Smith, 2017",
                 "I like to live vicariously through my own photos. - Mohamed Aden, 2017",
-                "One is a fetish and one is gay. - Mohamed Aden, 2017"
+                "One is a fetish and one is gay. - Mohamed Aden, 2017",
+                "I will get high for $30. - James V. Nordberg, 2017",
+                "Don't let it happen again. - Parker Craine, 2017",
+                "Do whatever it takes to get the food into your mouth - Bao Nguyen, 2016"
 
+            };
+
+            spongeQuote = new string[] // Spongebob Quotes
+            {
+                "Life's as extreme as you want to make it!",
+                "Well, it may be stupid, but it’s also dumb.",
+                "Well, it’s no secret that the best thing about a secret is secretly telling someone your secret, thereby adding another secret to their secret collection of secrets, secretly.",
+                "Gary, I’m absorbing his blows like I’m made of some sort of spongy material",
+                "Meatball meatball spaghetti underneath, ravioli ravioli great barrier reef",
+                "It’s not just any boulder……..it’s a ROCK!",
+                "The inner machinations of my mind are an enigma.",
+                "You can’t fool me. I listen to public radio!",
+                "It’s a vast swirling wonderland of sparkling white pleasure. Let it fill your senses with cascading fluffy pillows of excitement, and comfort, as you’ve never felt before.",
+                "If I were to die right now in a fiery explosion due to carelessness of a friend…. Then it would just be alright.",
+                "You had to kill him. The boy cries you a sweater of tears... and you kill him. How are you going to live with yourself?",
+                "I'll take a Double Triple Bossy Deluxe on a raft, 4x4 animal style, extra shingles with a shimmy and a squeeze, light axle grease; make it cry, burn it, and let it swim.",
+                "Oh my god! A floating shopping list! Ahhh!",
+                "Sandy: “Don’t you have to be stupid somewhere else?”\nPatrick: “Not until 4”",
+                "Seaweed: 50% sea, 50% weed.",
+                "Now you must develop a taste for free-form jazz.",
+                "Squidward, your ceiling is talking to me.",
+                "Put those eyeballs back in your head, son!",
+                "Maybe a story will cheer you up. (picks up SpongeBob and seats him) It’s called “The Ugly Barnacle”. Once there was an ugly Barnacle. He was so ugly that everyone died. The End.",
+                "Either you (a) put the dime in me pants, (b) put the dime in me pants, or (c) put the dime in me pants!",
+                "Patrick! You forgot how to eat again! Come on, we’ll get the funnel",
+                "Squidward… I used your clarinet to unclog my toilet!",
+                "I’m ugly and I’m proud! I’m ugly and I’m proud!! I’m ugly and I’m proud!"
             };
 
             randOra = new string[]  //random ora
@@ -164,7 +195,7 @@ namespace DiscordApp_v._02
             commands.CreateCommand("help") //Help
                 .Do(async (e) =>
                 {
-                    await e.Channel.SendMessage(" hello - Say Hi \nname - Bots name \nabout - Bot info  \nkiss - Kiss the bot  \nhentai - post from the hentai folder \ngayfur - Post from the gay folder  \nquote - Posts a classic quote \nora - Jotaro \nmuda - DIO \nroll - Rolls a d20 \ncalc - Simple calculator \nmgs - Random Song from Metal Gear Solid \nchill - Chill out \nstand - stand v stand battle \nstage - stage for the stand command \nOT - OppaiTime Invites \nbestgirl - Best girl \nbestgirlold - Older version of best girl \njello - bouncing jello \ndaki - Dakimakura Resource \nptg - Private Tracker General \nsosad - That's so sad \nqtloli - Cute Little Girls \ntravel - Travel Doc Outline \nahitsthenewnow - Kanye Command \nlife - in the end it doesn't even matter \nplex - Server run out of Chronos' basement");
+                    await e.Channel.SendMessage(" hello - Say Hi \nname - Bots name \nabout - Bot info  \nkiss - Kiss the bot  \nhentai - post from the hentai folder \ngayfur - Post from the gay folder  \nquote - Posts a classic quote \nora - Jotaro \nmuda - DIO \nroll - Rolls a d20 \ncalc - Simple calculator \nmgs - Random Song from Metal Gear Solid \nchill - Chill out \nstand - stand v stand battle \nstage - stage for the stand command \nOT - OppaiTime Invites \nbestgirl - Best girl \nbestgirlold - Older version of best girl \njello - bouncing jello \ndaki - Dakimakura Resource \nptg - Private Tracker General \nsosad - That's so sad \nqtloli - Cute Little Girls \ntravel - Travel Doc Outline \nahitsthenewnow - Kanye Command \nlife - in the end it doesn't even matter \nplex - Server run out of Chronos' basement \nsbquote - Random Spongebob Quote");
                 });
 
             commands.CreateCommand("about") //about snail
@@ -176,7 +207,7 @@ namespace DiscordApp_v._02
             commands.CreateCommand("name") //What is the bots name
                .Do(async (e) =>
                {
-                   await e.Channel.SendMessage("Hello, I am snail.");
+                   await e.Channel.SendMessage("Hello, I am Snail.");
                });
 
             commands.CreateCommand("kiss") //*kiss*
@@ -276,6 +307,13 @@ namespace DiscordApp_v._02
                             int randomQuoteIndex = rand.Next(goodQuote.Length);
                             string quoteToPost = goodQuote[randomQuoteIndex];
                             await e.Channel.SendMessage(quoteToPost);
+                        });
+            commands.CreateCommand("sbquote")  //Quote Function
+                        .Do(async (e) =>
+                        {
+                            int randomSpongeIndex = rand.Next(spongeQuote.Length);
+                            string sbToPost = spongeQuote[randomSpongeIndex];
+                            await e.Channel.SendMessage(sbToPost);
                         });
 
             commands.CreateCommand("ora")  //Ora Function
@@ -393,7 +431,8 @@ namespace DiscordApp_v._02
 
             discord.ExecuteAndWait(async () =>
             {
-                await discord.Connect("MzU3MDA2NzA4MDE2Njc2ODY3.DJjoAA.Bj-2T6ruZdIFojkqhWPqrG0e2HY", TokenType.Bot);
+                await discord.Connect("sample token", TokenType.Bot);
+                //If you are using this code for yourself change the above to your own personal token if you don't I will just reset it and it will be useless anyway
             });
 
         }
