@@ -390,5 +390,30 @@ namespace SnailBot
             await Context.Channel.SendFileAsync(@"randumb\" + hentai[randomHentai.Next(0, hentai.Length)].Name);
         }
 
+        [Command("gay")]
+        [Summary("Gayyyyy")]
+        public async Task gay()
+        {
+            DirectoryInfo fur = new DirectoryInfo(Directory.GetCurrentDirectory() + @"\gay"); //Random function for the furry command
+            FileInfo[] furry = fur.GetFiles("*.*");
+            Random randomFurry = new Random();
+            await Context.Channel.SendFileAsync(@"gay\" + furry[randomFurry.Next(0, furry.Length)].Name);
+        }
+
+        [Command("stats")]
+        [Summary("Give the user stats")]
+        public async Task stats()
+        {
+            Random rnd = new Random();
+            await ReplyAsync("Strength: " + rnd.Next(1, 19) + "\nDexterity: " + rnd.Next(1, 19) + "\nConstitution: " + rnd.Next(1, 19) + "\nIntelligence: " + rnd.Next(1, 19) + "\nWisdom: " + rnd.Next(1, 19) + "\nCharisma: " + rnd.Next(1, 19));
+        }
+
+        [Command("worstgirl")]
+        [Summary("worst girl")]
+        public async Task worstgirl()
+        {
+            await Context.Channel.SendFileAsync("extras/worst.JPG");
+        }
+
     }
 };
