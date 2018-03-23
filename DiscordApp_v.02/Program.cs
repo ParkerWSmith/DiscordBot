@@ -17,7 +17,7 @@ namespace DiscordApp_v._02
         private DiscordSocketClient client;
         private IServiceProvider services;
 
-        string token = "MzU3MDA2NzA4MDE2Njc2ODY3.DQfftQ.K3dYDyXnMN288OzFSjZ3uzE_64g";
+        string token = "";
 
         static void Main(string[] args) => new Program().Start().GetAwaiter().GetResult();
 
