@@ -6,6 +6,7 @@ using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Globalization;
 using System.Threading.Tasks;
 
 namespace SnailBot
@@ -74,7 +75,7 @@ namespace SnailBot
                 "When you understand why, then you'll know. - Parker Smith, 2017",
                 "I like to live vicariously through my own photos. - Mohamed Aden, 2017",
                 "One is a fetish and one is gay. - Mohamed Aden, 2017",
-                "I will get high for $30. - James V. Nordberg, 2017",
+                //"I will get high for $30. - James V. Nordberg, 2017",
                 "Don't let it happen again. - Parker Craine, 2017",
                 "Do whatever it takes to get the food into your mouth - Bao Nguyen, 2016"
 
@@ -146,7 +147,7 @@ namespace SnailBot
         [Alias("h")]
         public async Task help()
         {
-            await ReplyAsync(" hello - Say Hi \nname - Bots name \nabout - Bot info  \nkiss - Kiss the bot  \nhentai - post from the hentai folder \ngayfur - Post from the gay folder  \nquote - Posts a classic quote \nora - Jotaro \nmuda - DIO \nroll - Rolls a d20 \ncalc - Simple calculator \nmgs - Random Song from Metal Gear Solid \nchill - Chill out \nstand - stand v stand battle \nstage - stage for the stand command \nOT - OppaiTime Invites \nbestgirl - Best girl \nbestgirlold - Older version of best girl \njello - bouncing jello \ndaki - Dakimakura Resource \nptg - Private Tracker General \nsosad - That's so sad \nqtloli - Cute Little Girls \ntravel - Travel Doc Outline \nahitsthenewnow - Kanye Command \nlife - in the end it doesn't even matter \nplex - Server run out of Chronos' basement \nsbquote - Random Spongebob Quote");
+            await ReplyAsync(" hello - Say Hi \nname - Bots name \nabout - Bot info  \nkiss - Kiss the bot  \nhentai - post from the hentai folder \nquote - Posts a classic quote \nora - Jotaro \nmuda - DIO \nroll - Rolls a d20 \ncalc - Simple calculator \nmgs - Random Song from Metal Gear Solid \nchill - Chill out \nstand - stand v stand battle \nstage - stage for the stand command \nOT - OppaiTime Invites \nbestgirl - Best girl \nbestgirlold - Older version of best girl \njello - bouncing jello \ndaki - Dakimakura Resource \nptg - Private Tracker General \nsosad - That's so sad \nqtloli - Cute Little Girls \ntravel - Travel Doc Outline \nahitsthenewnow - Kanye Command \nlife - in the end it doesn't even matter \nplex - Server run out of Chronos' basement \nsbquote - Random Spongebob Quote");
         }
 
         [Command("about")]
@@ -162,6 +163,14 @@ namespace SnailBot
         public async Task name()
         {
             await ReplyAsync("Hello, I am SnailBot How's it going?.");
+        }
+
+        [Command("no")]
+        [Summary("Says no")]
+        [Alias("nope")]
+        public async Task no()
+        {
+            await ReplyAsync("No.");
         }
 
         [Command("kiss")]
@@ -213,6 +222,17 @@ namespace SnailBot
         public async Task ptg()
         {
             await ReplyAsync("lol just use piratebay bitchboi");
+        }
+
+        [Command("happynewyear")]
+        [Summary("Happy new year")]
+        public async Task newyear()
+        {
+            //>Current Year
+            //>Better
+            int currentYear = DateTime.Now.Year;
+            int nextYear = currentYear + 1;
+            await ReplyAsync(nextYear + " Will be Better");
         }
 
         [Command("travel")]
@@ -390,22 +410,12 @@ namespace SnailBot
             await Context.Channel.SendFileAsync(@"randumb\" + hentai[randomHentai.Next(0, hentai.Length)].Name);
         }
 
-        [Command("gay")]
-        [Summary("Gayyyyy")]
-        public async Task gay()
-        {
-            DirectoryInfo fur = new DirectoryInfo(Directory.GetCurrentDirectory() + @"\gay"); //Random function for the furry command
-            FileInfo[] furry = fur.GetFiles("*.*");
-            Random randomFurry = new Random();
-            await Context.Channel.SendFileAsync(@"gay\" + furry[randomFurry.Next(0, furry.Length)].Name);
-        }
-
         [Command("stats")]
         [Summary("Give the user stats")]
         public async Task stats()
         {
             Random rnd = new Random();
-            await ReplyAsync("Strength: " + rnd.Next(1, 19) + "\nDexterity: " + rnd.Next(1, 19) + "\nConstitution: " + rnd.Next(1, 19) + "\nIntelligence: " + rnd.Next(1, 19) + "\nWisdom: " + rnd.Next(1, 19) + "\nCharisma: " + rnd.Next(1, 19));
+            await ReplyAsync(Context.Message.Author.Mention + ", here are your stats for the day. \nStrength: " + rnd.Next(3, 19) + "\nDexterity: " + rnd.Next(3, 19) + "\nConstitution: " + rnd.Next(3, 19) + "\nIntelligence: " + rnd.Next(3, 19) + "\nWisdom: " + rnd.Next(3, 19) + "\nCharisma: " + rnd.Next(3, 19));
         }
 
         [Command("worstgirl")]
@@ -415,5 +425,11 @@ namespace SnailBot
             await Context.Channel.SendFileAsync("extras/worst.JPG");
         }
 
+        [Command("Define")]
+        [Summary("Defines a hentai term")]
+        public async Task define()
+        {
+
+        }
     }
 };
