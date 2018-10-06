@@ -182,7 +182,7 @@ namespace SnailBot
         }
 
         [Command("think")]
-        [Summary("???")]
+        [Summary("??")]
         public async Task think()
         {
             await ReplyAsync("What are you talking about??? \n🤔🤔🤔🤔🤔🤔🤔🤔");
