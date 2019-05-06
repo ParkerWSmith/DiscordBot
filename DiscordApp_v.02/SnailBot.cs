@@ -1,6 +1,5 @@
 ﻿using Discord;
 using Discord.Commands;
-
 using System;
 using System.IO;
 using System.Collections.Generic;
@@ -67,7 +66,7 @@ namespace SnailBot
                 "It's Sunday somewhere. - Parker Craine, 2016",
                 "I wonder if this urinal will wash my pee pee. - Mohamed Aden, 2015",
                 "You arn't drunk unless you shit your pants twice. - Nic Carnes, 2015",
-                "I want it like the picture. - Jun Ho Lee, 2014",
+                "I want it like the picture. - Junho Lee, 2014",
                 "I will go to Metacon 2016. - Brennan Schneider, 2016",
                 "I'm a literal nobody. - Parker Smith, 2016",
                 "FINLAND - Jim Nordberg, ALL THE FUCKING TIME",
@@ -77,7 +76,9 @@ namespace SnailBot
                 "One is a fetish and one is gay. - Mohamed Aden, 2017",
                 //"I will get high for $30. - James V. Nordberg, 2017",
                 "Don't let it happen again. - Parker Craine, 2017",
-                "Do whatever it takes to get the food into your mouth - Bao Nguyen, 2016"
+                "Do whatever it takes to get the food into your mouth - Bao Nguyen, 2016",
+                "Buying things is basically stealing. - Junho Lee, 2018",
+                "4K is a penis, HDR is a COCK. - Parker Smith, 2018"
 
         };
 
@@ -131,6 +132,53 @@ namespace SnailBot
                 "http://i.imgur.com/1mSr2EU.gif"
          };
 
+        string[] randNut = new string[]  //random nut
+         {
+                "Cum and go",
+                "Hit it then quit it",
+                "Shoot and scoot",
+                "Ejaculate and evacuate",
+                "Blow your load and hit the road",
+                "Shoot your goo and say Adieu",
+                "Rock her box and change the locks",
+                "Smash her rear and disappear",
+                "Prove you ain't gay and run the fuck away",
+                "Splatter and scatter",
+                "Creampie and goodbye",
+                "Cream and scream",
+                "Violate then migrate",
+                "Shoot the jizz and out you is",
+                "Work out some flab then hit her with a dab",
+                "Make her bamboozle and skidadle skidoodle",
+                "Butter the bread and play dead",
+                "Blast then become the past",
+                "Unload your genetic information and leave the nation",
+                "Ram her ass n' hit the gas",
+                "Spread the seed then need for speed",
+                "Bust on her cooter then catch an uber",
+                "Wrinkle the sheets then hit the streets",
+                "Inject yourself then eject yourself",
+                "Rail 'n bail",
+                "Sploosh and vamoose",
+                "Let the semen flow and GTFO",
+                "Insert the peen and flee the scene",
+                "Squirt and revert",
+                "Release it then cease it",
+                "Bruise and cruise",
+                "Seed 'n plead",
+                "Yeet and retreat",
+                "Smash 'n dash",
+                "Ram and scram",
+                "Copulate and absquatulate",
+                "Penetrate and defenestrate",
+                "Pump and dump",
+                "Glue her rift and call a lyft",
+                "Get her all waxy and call a taxi",
+                "Fill the crack and never come back",
+                "Give her schlong and say so long",
+                "Release the dump and Forrest Gump",
+                "Empty the sack and don't call back"
+         };
 
         //Here begins the commands
 
@@ -147,7 +195,7 @@ namespace SnailBot
         [Alias("h")]
         public async Task help()
         {
-            await ReplyAsync(" hello - Say Hi \nname - Bots name \nabout - Bot info  \nkiss - Kiss the bot  \nhentai - post from the hentai folder \nquote - Posts a classic quote \nora - Jotaro \nmuda - DIO \nroll - Rolls a d20 \ncalc - Simple calculator \nmgs - Random Song from Metal Gear Solid \nchill - Chill out \nstand - stand v stand battle \nstage - stage for the stand command \nOT - OppaiTime Invites \nbestgirl - Best girl \nbestgirlold - Older version of best girl \njello - bouncing jello \ndaki - Dakimakura Resource \nptg - Private Tracker General \nsosad - That's so sad \nqtloli - Cute Little Girls \ntravel - Travel Doc Outline \nahitsthenewnow - Kanye Command \nlife - in the end it doesn't even matter \nplex - Server run out of Chronos' basement \nsbquote - Random Spongebob Quote \nhappynewyear - Have a great year \nhitdabricks - You can leave \nroll - rolls a d20 \nstats - Gives some DnD stats");
+            await ReplyAsync(" hello - Say Hi \nname - Bots name \nabout - Bot info  \nkiss - Kiss the bot  \nhentai - post from the hentai folder \nora - Jotaro \nmuda - DIO \nroll - Rolls a d20 \ncalc - Simple calculator \nmgs - Random Song from Metal Gear Solid \nchill - Chill out \nstand - stand v stand battle \nstage - stage for the stand command \nOT - OppaiTime Invites \nbestgirl - Best girl \nbestgirlold - Older version of best girl \njello - bouncing jello \ndaki - Dakimakura Resource \nptg - Private Tracker General \nsosad - That's so sad \nqtloli - Cute Little Girls \ntravel - Travel Doc Outline \nahitsthenewnow - Kanye Command \nlife - in the end it doesn't even matter \nplex - Server run out of Chronos' basement \nsbquote - Random Spongebob Quote");
         }
 
         [Command("about")]
@@ -173,6 +221,14 @@ namespace SnailBot
             await ReplyAsync("No.");
         }
 
+        [Command("justleave")]
+        [Summary("Just go")]
+        [Alias("hitdabricks")]
+        public async Task leave()
+        {
+            await Context.Channel.SendFileAsync("extras/leave.jpg");
+        }
+
         [Command("kiss")]
         [Summary("Kiss the bot")]
         [Alias("Chuu")]
@@ -182,7 +238,7 @@ namespace SnailBot
         }
 
         [Command("think")]
-        [Summary("??")]
+        [Summary("???")]
         public async Task think()
         {
             await ReplyAsync("What are you talking about??? \n🤔🤔🤔🤔🤔🤔🤔🤔");
@@ -235,6 +291,23 @@ namespace SnailBot
             await ReplyAsync(nextYear + " Will be Better");
         }
 
+        [Command("bet")]
+        [Summary("Time to delay")]
+        public async Task bet()
+        {
+            DateTime daysLeft = DateTime.Parse("1/25/2019");
+            DateTime startDate = DateTime.Now;
+            DateTime daysLeft2 = DateTime.Parse("8/10/2018");
+            DateTime startDate2 = DateTime.Now;
+
+            //Calculate countdown timer.
+            TimeSpan t = daysLeft - startDate;
+            string countDown = string.Format("{0}", t.Days, t.Hours, t.Minutes, t.Seconds);
+            TimeSpan t2 = daysLeft2 - startDate2;
+            string countDown1 = string.Format("{0}", t2.Days, t2.Hours, t2.Minutes, t2.Seconds);
+            await ReplyAsync(countDown1 + " days till bao gets his money. \n");
+        }
+
         [Command("travel")]
         [Summary("travel outline")]
         public async Task travel()
@@ -268,6 +341,16 @@ namespace SnailBot
             int randomMudaIndex = rand.Next(randMuda.Length);
             string mudaToPost = randMuda[randomMudaIndex];
             await ReplyAsync(mudaToPost);
+        }
+
+        [Command("nut")]
+        [Summary("nut")]
+        [Alias("advice")]
+        public async Task Nut()
+        {
+            int randomNutIndex = rand.Next(randNut.Length);
+            string NutToPost = randNut[randomNutIndex];
+            await ReplyAsync(NutToPost);
         }
 
         [Command("kanye")]
@@ -308,6 +391,18 @@ namespace SnailBot
             int randomSpongeIndex = rand.Next(spongeQuote.Length);
             string sbToPost = spongeQuote[randomSpongeIndex];
             await ReplyAsync(sbToPost);
+        }
+
+        [Command("asmr")]
+        [Summary("Random asmr folder")]
+        public async Task asmr()
+        {
+            string parentFolder = @"";
+            string[] folders = Directory.GetDirectories(parentFolder);
+            Random rnd = new Random();
+            string result = folders[rnd.Next(folders.Length)];
+            string name = Path.GetFileName(result);
+            await ReplyAsync(name);
         }
 
         [Command("mgs")]
@@ -397,7 +492,7 @@ namespace SnailBot
         public async Task qtloli()
         {
             await ReplyAsync("Hang tight, the feds are on the way fucko.");
-            Context.Channel.SendFileAsync("extras/bestgirl.jpg");
+            Context.Channel.SendFileAsync("extras/fbi.png");
         }
 
         [Command("hentai")]
@@ -418,11 +513,43 @@ namespace SnailBot
             await ReplyAsync(Context.Message.Author.Mention + ", here are your stats for the day. \nStrength: " + rnd.Next(3, 19) + "\nDexterity: " + rnd.Next(3, 19) + "\nConstitution: " + rnd.Next(3, 19) + "\nIntelligence: " + rnd.Next(3, 19) + "\nWisdom: " + rnd.Next(3, 19) + "\nCharisma: " + rnd.Next(3, 19));
         }
 
+        [Command("attack")]
+        [Summary("Attack another user")]
+        public async Task attack([Remainder, Summary("The text to echo")] string echo)
+        {
+            Random rnd = new Random();
+            await ReplyAsync(Context.Message.Author.Mention + " did " + rnd.Next(0, 21) + " damage.");
+        }
+
+        [Command("block")]
+        [Summary("Attack another user")]
+        public async Task block([Remainder, Summary("The text to echo")] string echo)
+        {
+            Random rnd = new Random();
+            await ReplyAsync(Context.Message.Author.Mention + " blocked for " + rnd.Next(0, 21) + " damage.");
+        }
+
         [Command("worstgirl")]
         [Summary("worst girl")]
         public async Task worstgirl()
         {
             await Context.Channel.SendFileAsync("extras/worst.JPG");
+        }
+
+        [Command("xp")]
+        [Summary("Shows the users XP")]
+        public async Task XP(uint XP)
+        {
+            uint level = (uint)Math.Sqrt(XP / 50);
+            await Context.Channel.SendMessageAsync("That would be lvl " + level);
+        }
+
+
+        [Command("NoBalls")]
+        [Summary("$ Stolen from Delta")]
+        public async Task NoBalls()
+        {
+            await ReplyAsync("Money Parker has stolen from Delta on free flights. \n **Flight**               **Flight Cost**        **Total** \n MSP - ORD      $182.00        $182.00 \n MSP - HND      $2002.00       $2160.00 \n MSP - BCN      $2783.00        $4943.00 ");
         }
 
         [Command("Define")]
