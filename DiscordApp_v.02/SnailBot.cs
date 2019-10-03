@@ -308,6 +308,19 @@ namespace SnailBot
             await ReplyAsync(countDown1 + " days till bao gets his money. \n");
         }
 
+        [Command("Tokyo")]
+        [Summary("Time until trip")]
+        public async Task Tokyo()
+        {
+            DateTime daysLeft = DateTime.Parse("10/30/2019");
+            DateTime startDate = DateTime.Now;
+
+            //Calculate countdown timer.
+            TimeSpan t = daysLeft - startDate;
+            string countDown = string.Format("{0}", t.Days, t.Hours, t.Minutes, t.Seconds);
+            await ReplyAsync(countDown + " days until we leave. \n");
+        }
+
         [Command("travel")]
         [Summary("travel outline")]
         public async Task travel()
@@ -397,7 +410,7 @@ namespace SnailBot
         [Summary("Random asmr folder")]
         public async Task asmr()
         {
-            string parentFolder = @"";
+            string parentFolder = @"X:\Other\H-Games & Media\ASMR";
             string[] folders = Directory.GetDirectories(parentFolder);
             Random rnd = new Random();
             string result = folders[rnd.Next(folders.Length)];
@@ -549,7 +562,27 @@ namespace SnailBot
         [Summary("$ Stolen from Delta")]
         public async Task NoBalls()
         {
-            await ReplyAsync("Money Parker has stolen from Delta on free flights. \n **Flight**               **Flight Cost**        **Total** \n MSP - ORD      $182.00        $182.00 \n MSP - HND      $2002.00       $2160.00 \n MSP - BCN      $2783.00        $4943.00 ");
+            await ReplyAsync("Money Parker has stolen from Delta on free flights. \n **Flight**               **Flight Cost**        **Total** \n MSP - ORD      $182.00        $182.00 \n MSP - HND      $2002.00       $2160.00 \n MSP - BCN      $2783.00        $4943.00 \n MSP - XNA       $279.00        $5222.00");
+        }
+
+        [Command("Movie")]
+        [Summary("Pulls movies from a txt file")]
+        [Alias("whatshouldiwatch")]
+        private async Task Movie()
+        {
+            var lines = File.ReadAllLines("C:/Users/Parker/Documents/Visual Studio 2019/Projects/SnailBot/SnailBot/extras/TheMovies.txt");
+            var r = new Random();
+            var randomLineNumber = r.Next(0, lines.Length - 1);
+            var line = lines[randomLineNumber];
+            await ReplyAsync(line);
+        }
+
+        [Command("JAV")]
+        [Summary("Jav Search")]
+
+        private async Task JAV(string text)
+        {
+            await ReplyAsync("https://www.busdmm.net/en/" + (text));
         }
 
         [Command("Define")]
