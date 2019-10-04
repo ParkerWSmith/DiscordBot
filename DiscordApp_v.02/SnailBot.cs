@@ -12,22 +12,7 @@ namespace SnailBot
 {
     public class SnailBot : ModuleBase
     {
-
         Random rand = new Random();
-
-        string[] randMgs = new string[] // MSG Music
-            {
-                "https://www.youtube.com/watch?v=F9hagVL-__c",
-                "https://www.youtube.com/watch?v=hULJu2mcU6s",
-                "https://www.youtube.com/watch?v=VQzgI6xJEH0",
-                "https://www.youtube.com/watch?v=PXkgn3QUA2w",
-                "https://www.youtube.com/watch?v=lGf2b1H91JA",
-                "https://www.youtube.com/watch?v=3lwUS0GlNIA",
-                "https://www.youtube.com/watch?v=RrkzIN2eP0U",
-                "https://www.youtube.com/watch?v=ZYAPgPH9hsI",
-                "https://www.youtube.com/watch?v=XI1VpElKWF8",
-                "https://www.youtube.com/watch?v=QiPon8lr48U",
-            };
 
         string[] randWest = new string[] //Kanye command music
         {
@@ -59,126 +44,6 @@ namespace SnailBot
                 "Yo, chill the fuck out. \n https://www.youtube.com/watch?v=tJbVvu2AoQs",
                 "Yo, chill the fuck out. \n http://rainymood.com/watch?v=7bW75OwVXZI",
         };
-
-        string[] goodQuote = new string[]  //Quotes for the quote function
-        {
-                "I'm 15 minutes from a felony. - Parker Smith, 2017",
-                "It's Sunday somewhere. - Parker Craine, 2016",
-                "I wonder if this urinal will wash my pee pee. - Mohamed Aden, 2015",
-                "You arn't drunk unless you shit your pants twice. - Nic Carnes, 2015",
-                "I want it like the picture. - Junho Lee, 2014",
-                "I will go to Metacon 2016. - Brennan Schneider, 2016",
-                "I'm a literal nobody. - Parker Smith, 2016",
-                "FINLAND - Jim Nordberg, ALL THE FUCKING TIME",
-                "Well when I was in... - Parker Smith, ALL THE FUCKING TIME",
-                "When you understand why, then you'll know. - Parker Smith, 2017",
-                "I like to live vicariously through my own photos. - Mohamed Aden, 2017",
-                "One is a fetish and one is gay. - Mohamed Aden, 2017",
-                //"I will get high for $30. - James V. Nordberg, 2017",
-                "Don't let it happen again. - Parker Craine, 2017",
-                "Do whatever it takes to get the food into your mouth - Bao Nguyen, 2016",
-                "Buying things is basically stealing. - Junho Lee, 2018",
-                "4K is a penis, HDR is a COCK. - Parker Smith, 2018"
-
-        };
-
-        string[] spongeQuote = new string[] // Spongebob Quotes
-        {
-                "Life's as extreme as you want to make it!",
-                "Well, it may be stupid, but it’s also dumb.",
-                "Well, it’s no secret that the best thing about a secret is secretly telling someone your secret, thereby adding another secret to their secret collection of secrets, secretly.",
-                "Gary, I’m absorbing his blows like I’m made of some sort of spongy material",
-                "Meatball meatball spaghetti underneath, ravioli ravioli great barrier reef",
-                "It’s not just any boulder……..it’s a ROCK!",
-                "The inner machinations of my mind are an enigma.",
-                "You can’t fool me. I listen to public radio!",
-                "It’s a vast swirling wonderland of sparkling white pleasure. Let it fill your senses with cascading fluffy pillows of excitement, and comfort, as you’ve never felt before.",
-                "If I were to die right now in a fiery explosion due to carelessness of a friend…. Then it would just be alright.",
-                "You had to kill him. The boy cries you a sweater of tears... and you kill him. How are you going to live with yourself?",
-                "I'll take a Double Triple Bossy Deluxe on a raft, 4x4 animal style, extra shingles with a shimmy and a squeeze, light axle grease; make it cry, burn it, and let it swim.",
-                "Oh my god! A floating shopping list! Ahhh!",
-                "Sandy: “Don’t you have to be stupid somewhere else?”\nPatrick: “Not until 4”",
-                "Seaweed: 50% sea, 50% weed.",
-                "Now you must develop a taste for free-form jazz.",
-                "Squidward, your ceiling is talking to me.",
-                "Put those eyeballs back in your head, son!",
-                "Maybe a story will cheer you up. (picks up SpongeBob and seats him) It’s called “The Ugly Barnacle”. Once there was an ugly Barnacle. He was so ugly that everyone died. The End.",
-                "Either you (a) put the dime in me pants, (b) put the dime in me pants, or (c) put the dime in me pants!",
-                "Patrick! You forgot how to eat again! Come on, we’ll get the funnel",
-                "Squidward… I used your clarinet to unclog my toilet!",
-                "I’m ugly and I’m proud! I’m ugly and I’m proud!! I’m ugly and I’m proud!"
-        };
-
-
-        string[] randOra = new string[]  //random ora
-            {
-                "Ora!",
-                "Ora, Ora, Ora!",
-                "Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora!",
-                "Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, OraOra, Ora, Ora, Ora!",
-                "Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, OraOra, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora, Ora!",
-                "ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA, ORA!",
-                "https://i.imgur.com/YNAOKlC.gif"
-            };
-
-        string[] randMuda = new string[]  //random muda
-         {
-                "Muda!",
-                "Muda, Muda, Muda!",
-                "Muda, Muda, Muda, Muda, Muda, Muda!",
-                "Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda!",
-                "Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda, Muda!",
-                "MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA, MUDA!",
-                "http://i.imgur.com/1mSr2EU.gif"
-         };
-
-        string[] randNut = new string[]  //random nut
-         {
-                "Cum and go",
-                "Hit it then quit it",
-                "Shoot and scoot",
-                "Ejaculate and evacuate",
-                "Blow your load and hit the road",
-                "Shoot your goo and say Adieu",
-                "Rock her box and change the locks",
-                "Smash her rear and disappear",
-                "Prove you ain't gay and run the fuck away",
-                "Splatter and scatter",
-                "Creampie and goodbye",
-                "Cream and scream",
-                "Violate then migrate",
-                "Shoot the jizz and out you is",
-                "Work out some flab then hit her with a dab",
-                "Make her bamboozle and skidadle skidoodle",
-                "Butter the bread and play dead",
-                "Blast then become the past",
-                "Unload your genetic information and leave the nation",
-                "Ram her ass n' hit the gas",
-                "Spread the seed then need for speed",
-                "Bust on her cooter then catch an uber",
-                "Wrinkle the sheets then hit the streets",
-                "Inject yourself then eject yourself",
-                "Rail 'n bail",
-                "Sploosh and vamoose",
-                "Let the semen flow and GTFO",
-                "Insert the peen and flee the scene",
-                "Squirt and revert",
-                "Release it then cease it",
-                "Bruise and cruise",
-                "Seed 'n plead",
-                "Yeet and retreat",
-                "Smash 'n dash",
-                "Ram and scram",
-                "Copulate and absquatulate",
-                "Penetrate and defenestrate",
-                "Pump and dump",
-                "Glue her rift and call a lyft",
-                "Get her all waxy and call a taxi",
-                "Fill the crack and never come back",
-                "Give her schlong and say so long",
-                "Release the dump and Forrest Gump",
-                "Empty the sack and don't call back"
-         };
 
         //Here begins the commands
 
@@ -305,7 +170,6 @@ namespace SnailBot
             string countDown = string.Format("{0}", t.Days, t.Hours, t.Minutes, t.Seconds);
             TimeSpan t2 = daysLeft2 - startDate2;
             string countDown1 = string.Format("{0}", t2.Days, t2.Hours, t2.Minutes, t2.Seconds);
-            await ReplyAsync(countDown1 + " days till bao gets his money. \n");
         }
 
         [Command("Tokyo")]
@@ -341,9 +205,11 @@ namespace SnailBot
         [Alias("ORA")]
         public async Task Ora()
         {
-            int randomOraIndex = rand.Next(randOra.Length);
-            string oraToPost = randOra[randomOraIndex];
-            await ReplyAsync(oraToPost);
+            var lines = File.ReadAllLines("/extras/ora.txt");
+            var r = new Random();
+            var randomLineNumber = r.Next(0, lines.Length - 1);
+            var line = lines[randomLineNumber];
+            await ReplyAsync(line);
         }
 
         [Command("muda")]
@@ -351,9 +217,11 @@ namespace SnailBot
         [Alias("MUDA")]
         public async Task Muda()
         {
-            int randomMudaIndex = rand.Next(randMuda.Length);
-            string mudaToPost = randMuda[randomMudaIndex];
-            await ReplyAsync(mudaToPost);
+            var lines = File.ReadAllLines("/extras/muda.txt");
+            var r = new Random();
+            var randomLineNumber = r.Next(0, lines.Length - 1);
+            var line = lines[randomLineNumber];
+            await ReplyAsync(line);
         }
 
         [Command("nut")]
@@ -361,9 +229,11 @@ namespace SnailBot
         [Alias("advice")]
         public async Task Nut()
         {
-            int randomNutIndex = rand.Next(randNut.Length);
-            string NutToPost = randNut[randomNutIndex];
-            await ReplyAsync(NutToPost);
+            var lines = File.ReadAllLines("/extras/nut.txt");
+            var r = new Random();
+            var randomLineNumber = r.Next(0, lines.Length - 1);
+            var line = lines[randomLineNumber];
+            await ReplyAsync(line);
         }
 
         [Command("kanye")]
@@ -391,9 +261,11 @@ namespace SnailBot
         [Alias("stupidshitwesay")]
         public async Task quote()
         {
-            int randomQuoteIndex = rand.Next(goodQuote.Length);
-            string quoteToPost = goodQuote[randomQuoteIndex];
-            await ReplyAsync(quoteToPost);
+            var lines = File.ReadAllLines("/extras/quote.txt");
+            var r = new Random();
+            var randomLineNumber = r.Next(0, lines.Length - 1);
+            var line = lines[randomLineNumber];
+            await ReplyAsync(line);
         }
 
         [Command("sbquote")]
@@ -401,9 +273,11 @@ namespace SnailBot
         [Alias("sb")]
         public async Task sbquote()
         {
-            int randomSpongeIndex = rand.Next(spongeQuote.Length);
-            string sbToPost = spongeQuote[randomSpongeIndex];
-            await ReplyAsync(sbToPost);
+            var lines = File.ReadAllLines("/extras/sbquote.txt");
+            var r = new Random();
+            var randomLineNumber = r.Next(0, lines.Length - 1);
+            var line = lines[randomLineNumber];
+            await ReplyAsync(line);
         }
 
         [Command("asmr")]
@@ -423,9 +297,11 @@ namespace SnailBot
         [Alias("Standing")]
         public async Task mgs()
         {
-            int randomMgsIndex = rand.Next(randMgs.Length);
-            string mgsToPost = randMgs[randomMgsIndex];
-            await ReplyAsync(mgsToPost);
+            var lines = File.ReadAllLines("extras/mgs.txt");
+            var r = new Random();
+            var randomLineNumber = r.Next(0, lines.Length - 1);
+            var line = lines[randomLineNumber];
+            await ReplyAsync(line);
         }
 
         [Command("roll")]
@@ -570,7 +446,7 @@ namespace SnailBot
         [Alias("whatshouldiwatch")]
         private async Task Movie()
         {
-            var lines = File.ReadAllLines("C:/Users/Parker/Documents/Visual Studio 2019/Projects/SnailBot/SnailBot/extras/TheMovies.txt");
+            var lines = File.ReadAllLines("extras/TheMovies.txt");
             var r = new Random();
             var randomLineNumber = r.Next(0, lines.Length - 1);
             var line = lines[randomLineNumber];
