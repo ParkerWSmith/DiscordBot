@@ -10,8 +10,9 @@ using System.Threading.Tasks;
 
 namespace SnailBot
 {
-    public class SnailBot : ModuleBase
+     public class SnailBot : ModuleBase
     {
+
         Random rand = new Random();
 
         string[] randWest = new string[] //Kanye command music
@@ -156,6 +157,40 @@ namespace SnailBot
             await ReplyAsync(nextYear + " Will be Better");
         }
 
+        [Command("lockin")]
+        [Alias("loading")]
+        [Summary("Locked in")]
+        public async Task lockin()
+        {
+            DateTime startDate = DateTime.Parse("3/27/2020");
+            DateTime currentDate = DateTime.Now;
+
+            var lines = File.ReadAllLines("/extras/loading.txt");
+            var r = new Random();
+            var randomLineNumber = r.Next(0, lines.Length - 1);
+            var line = lines[randomLineNumber];
+
+            TimeSpan t = currentDate - startDate;
+            string countDown = string.Format("{0}", t.Days, t.Hours, t.Minutes, t.Seconds);
+            await ReplyAsync(countDown + " days have passed." + "\n" + line);
+
+        }
+
+        [Command("choose")]
+        [Summary("Glasses didn't get her shit together")]
+         public async Task choose(string list = null)
+        {
+            if (string.IsNullOrWhiteSpace(list))
+                return;
+            var listArr = list.Split(',');
+                if (listArr.Length < 2)
+                return;
+            var rng = new Random();
+            var randomLineNumber = rng.Next(0, listArr.Length);
+            var line = listArr[randomLineNumber];
+            await ReplyAsync("I choose " + line);
+        }
+
         [Command("bet")]
         [Summary("Time to delay")]
         public async Task bet()
@@ -176,7 +211,8 @@ namespace SnailBot
         [Summary("Time until trip")]
         public async Task Tokyo()
         {
-            DateTime daysLeft = DateTime.Parse("10/30/2019");
+            
+            DateTime daysLeft = DateTime.Parse("10/31/2019");
             DateTime startDate = DateTime.Now;
 
             //Calculate countdown timer.
@@ -217,7 +253,7 @@ namespace SnailBot
         [Alias("MUDA")]
         public async Task Muda()
         {
-            var lines = File.ReadAllLines("/extras/muda.txt");
+            var lines = File.ReadAllLines("/extras/ora.txt");
             var r = new Random();
             var randomLineNumber = r.Next(0, lines.Length - 1);
             var line = lines[randomLineNumber];
@@ -229,7 +265,7 @@ namespace SnailBot
         [Alias("advice")]
         public async Task Nut()
         {
-            var lines = File.ReadAllLines("/extras/nut.txt");
+            var lines = File.ReadAllLines("/extras/ora.txt");
             var r = new Random();
             var randomLineNumber = r.Next(0, lines.Length - 1);
             var line = lines[randomLineNumber];
@@ -273,7 +309,7 @@ namespace SnailBot
         [Alias("sb")]
         public async Task sbquote()
         {
-            var lines = File.ReadAllLines("/extras/sbquote.txt");
+            var lines = File.ReadAllLines("/extras/sb.txt");
             var r = new Random();
             var randomLineNumber = r.Next(0, lines.Length - 1);
             var line = lines[randomLineNumber];
@@ -284,7 +320,7 @@ namespace SnailBot
         [Summary("Random asmr folder")]
         public async Task asmr()
         {
-            string parentFolder = @"X:\Other\H-Games & Media\ASMR";
+            string parentFolder = @"path to folder";
             string[] folders = Directory.GetDirectories(parentFolder);
             Random rnd = new Random();
             string result = folders[rnd.Next(folders.Length)];
@@ -297,7 +333,7 @@ namespace SnailBot
         [Alias("Standing")]
         public async Task mgs()
         {
-            var lines = File.ReadAllLines("extras/mgs.txt");
+            var lines = File.ReadAllLines("/extras/msg.txt");
             var r = new Random();
             var randomLineNumber = r.Next(0, lines.Length - 1);
             var line = lines[randomLineNumber];
@@ -433,20 +469,12 @@ namespace SnailBot
             await Context.Channel.SendMessageAsync("That would be lvl " + level);
         }
 
-
-        [Command("NoBalls")]
-        [Summary("$ Stolen from Delta")]
-        public async Task NoBalls()
-        {
-            await ReplyAsync("Money Parker has stolen from Delta on free flights. \n **Flight**               **Flight Cost**        **Total** \n MSP - ORD      $182.00        $182.00 \n MSP - HND      $2002.00       $2160.00 \n MSP - BCN      $2783.00        $4943.00 \n MSP - XNA       $279.00        $5222.00");
-        }
-
         [Command("Movie")]
         [Summary("Pulls movies from a txt file")]
         [Alias("whatshouldiwatch")]
         private async Task Movie()
         {
-            var lines = File.ReadAllLines("extras/TheMovies.txt");
+            var lines = File.ReadAllLines("/extras/TheMovies.txt");
             var r = new Random();
             var randomLineNumber = r.Next(0, lines.Length - 1);
             var line = lines[randomLineNumber];
@@ -458,7 +486,7 @@ namespace SnailBot
 
         private async Task JAV(string text)
         {
-            await ReplyAsync("https://www.busdmm.net/en/" + (text));
+            await ReplyAsync("https://www.busdmm.work/en/" + (text));
         }
 
         [Command("Define")]
