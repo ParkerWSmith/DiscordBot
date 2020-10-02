@@ -19,7 +19,7 @@ namespace DiscordApp_v._02
 
         string token = "";
 
-        static void Main(string[] args) => new Program().Start().GetAwaiter().GetResult();
+              static void Main(string[] args) => new Program().Start().GetAwaiter().GetResult();
 
         public async Task Start()
         {
@@ -61,13 +61,14 @@ namespace DiscordApp_v._02
             // Execute the command. (result does not indicate a return value,
             // Rather an object stating if the command executed successfully)
             var result = await commands.ExecuteAsync(context, argPos, services);
-            if (!result.IsSuccess)
-                await context.Channel.SendMessageAsync(result.ErrorReason);
+            //if (!result.IsSuccess)
+                //await context.Channel.SendMessageAsync(result.ErrorReason);
         }
 
         private Task Log(LogMessage msg)
         {
             Console.WriteLine(msg.ToString());
+            Console.WriteLine("Snailbot is connected to " + client.Guilds.Count() + " servers");
             return Task.CompletedTask;
         }
     }
