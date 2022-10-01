@@ -165,7 +165,7 @@ namespace SnailBot
             DateTime startDate = DateTime.Parse("3/27/2020");
             DateTime currentDate = DateTime.Now;
 
-            var lines = File.ReadAllLines("/extras/loading.txt");
+            var lines = File.ReadAllLines("C:/Users/Parker/Documents/Visual Studio 2019/Projects/SnailBot/SnailBot/extras/loading.txt");
             var r = new Random();
             var randomLineNumber = r.Next(0, lines.Length - 1);
             var line = lines[randomLineNumber];
@@ -178,16 +178,10 @@ namespace SnailBot
 
         [Command("choose")]
         [Summary("Glasses didn't get her shit together")]
-         public async Task choose(string list = null)
+        public async Task choose([Remainder] string list = "")
         {
-            if (string.IsNullOrWhiteSpace(list))
-                return;
-            var listArr = list.Split(',');
-                if (listArr.Length < 2)
-                return;
-            var rng = new Random();
-            var randomLineNumber = rng.Next(0, listArr.Length);
-            var line = listArr[randomLineNumber];
+            string[] listArr = list.Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries);
+            string line = listArr[new Random().Next(listArr.Length)];
             await ReplyAsync("I choose " + line);
         }
 
@@ -211,7 +205,7 @@ namespace SnailBot
         [Summary("Time until trip")]
         public async Task Tokyo()
         {
-            
+
             DateTime daysLeft = DateTime.Parse("10/31/2019");
             DateTime startDate = DateTime.Now;
 
@@ -241,7 +235,7 @@ namespace SnailBot
         [Alias("ORA")]
         public async Task Ora()
         {
-            var lines = File.ReadAllLines("/extras/ora.txt");
+            var lines = File.ReadAllLines("C:/Users/Parker/Documents/Visual Studio 2019/Projects/SnailBot/SnailBot/extras/ora.txt");
             var r = new Random();
             var randomLineNumber = r.Next(0, lines.Length - 1);
             var line = lines[randomLineNumber];
@@ -253,7 +247,7 @@ namespace SnailBot
         [Alias("MUDA")]
         public async Task Muda()
         {
-            var lines = File.ReadAllLines("/extras/ora.txt");
+            var lines = File.ReadAllLines("C:/Users/Parker/Documents/Visual Studio 2019/Projects/SnailBot/SnailBot/extras/muda.txt");
             var r = new Random();
             var randomLineNumber = r.Next(0, lines.Length - 1);
             var line = lines[randomLineNumber];
@@ -265,7 +259,7 @@ namespace SnailBot
         [Alias("advice")]
         public async Task Nut()
         {
-            var lines = File.ReadAllLines("/extras/ora.txt");
+            var lines = File.ReadAllLines("C:/Users/Parker/Documents/Visual Studio 2019/Projects/SnailBot/SnailBot/extras/nut.txt");
             var r = new Random();
             var randomLineNumber = r.Next(0, lines.Length - 1);
             var line = lines[randomLineNumber];
@@ -297,7 +291,7 @@ namespace SnailBot
         [Alias("stupidshitwesay")]
         public async Task quote()
         {
-            var lines = File.ReadAllLines("/extras/quote.txt");
+            var lines = File.ReadAllLines("C:/Users/Parker/Documents/Visual Studio 2019/Projects/SnailBot/SnailBot/extras/quote.txt");
             var r = new Random();
             var randomLineNumber = r.Next(0, lines.Length - 1);
             var line = lines[randomLineNumber];
@@ -309,7 +303,7 @@ namespace SnailBot
         [Alias("sb")]
         public async Task sbquote()
         {
-            var lines = File.ReadAllLines("/extras/sb.txt");
+            var lines = File.ReadAllLines("C:/Users/Parker/Documents/Visual Studio 2019/Projects/SnailBot/SnailBot/extras/sbquote.txt");
             var r = new Random();
             var randomLineNumber = r.Next(0, lines.Length - 1);
             var line = lines[randomLineNumber];
@@ -320,7 +314,7 @@ namespace SnailBot
         [Summary("Random asmr folder")]
         public async Task asmr()
         {
-            string parentFolder = @"path to folder";
+            string parentFolder = @"X:\Other\H-Games & Media\ASMR";
             string[] folders = Directory.GetDirectories(parentFolder);
             Random rnd = new Random();
             string result = folders[rnd.Next(folders.Length)];
@@ -333,7 +327,7 @@ namespace SnailBot
         [Alias("Standing")]
         public async Task mgs()
         {
-            var lines = File.ReadAllLines("/extras/msg.txt");
+            var lines = File.ReadAllLines("C:/Users/Parker/Documents/Visual Studio 2019/Projects/SnailBot/SnailBot/extras/mgs.txt");
             var r = new Random();
             var randomLineNumber = r.Next(0, lines.Length - 1);
             var line = lines[randomLineNumber];
@@ -469,12 +463,20 @@ namespace SnailBot
             await Context.Channel.SendMessageAsync("That would be lvl " + level);
         }
 
+
+        [Command("NoBalls")]
+        [Summary("$ Stolen from Delta")]
+        public async Task NoBalls()
+        {
+            await ReplyAsync("Money Parker has stolen from Delta on free flights. \n **Flight**               **Flight Cost**        **Total** \n MSP - ORD      $182.00        $182.00 \n MSP - HND      $2002.00       $2160.00 \n MSP - BCN      $2783.00        $4943.00 \n MSP - XNA       $279.00        $5222.00");
+        }
+
         [Command("Movie")]
         [Summary("Pulls movies from a txt file")]
         [Alias("whatshouldiwatch")]
         private async Task Movie()
         {
-            var lines = File.ReadAllLines("/extras/TheMovies.txt");
+            var lines = File.ReadAllLines("C:/Users/Parker/Documents/Visual Studio 2019/Projects/SnailBot/SnailBot/extras/TheMovies.txt");
             var r = new Random();
             var randomLineNumber = r.Next(0, lines.Length - 1);
             var line = lines[randomLineNumber];
@@ -486,7 +488,7 @@ namespace SnailBot
 
         private async Task JAV(string text)
         {
-            await ReplyAsync("https://www.busdmm.work/en/" + (text));
+            await ReplyAsync("https://www.javbus.com/en/" + (text));
         }
 
         [Command("Define")]
