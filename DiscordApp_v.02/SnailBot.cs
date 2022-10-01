@@ -5,8 +5,13 @@ using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Globalization;
 using System.Threading.Tasks;
+using Discord.WebSocket;
+using System.Runtime.InteropServices;
+using System.Diagnostics;
+
 
 namespace SnailBot
 {
@@ -165,7 +170,7 @@ namespace SnailBot
             DateTime startDate = DateTime.Parse("3/27/2020");
             DateTime currentDate = DateTime.Now;
 
-            var lines = File.ReadAllLines("C:/Users/Parker/Documents/Visual Studio 2019/Projects/SnailBot/SnailBot/extras/loading.txt");
+            var lines = File.ReadAllLines("/extras/loading.txt");
             var r = new Random();
             var randomLineNumber = r.Next(0, lines.Length - 1);
             var line = lines[randomLineNumber];
@@ -235,7 +240,7 @@ namespace SnailBot
         [Alias("ORA")]
         public async Task Ora()
         {
-            var lines = File.ReadAllLines("C:/Users/Parker/Documents/Visual Studio 2019/Projects/SnailBot/SnailBot/extras/ora.txt");
+            var lines = File.ReadAllLines("/extras/ora.txt");
             var r = new Random();
             var randomLineNumber = r.Next(0, lines.Length - 1);
             var line = lines[randomLineNumber];
@@ -247,7 +252,7 @@ namespace SnailBot
         [Alias("MUDA")]
         public async Task Muda()
         {
-            var lines = File.ReadAllLines("C:/Users/Parker/Documents/Visual Studio 2019/Projects/SnailBot/SnailBot/extras/muda.txt");
+            var lines = File.ReadAllLines("/extras/muda.txt");
             var r = new Random();
             var randomLineNumber = r.Next(0, lines.Length - 1);
             var line = lines[randomLineNumber];
@@ -259,7 +264,7 @@ namespace SnailBot
         [Alias("advice")]
         public async Task Nut()
         {
-            var lines = File.ReadAllLines("C:/Users/Parker/Documents/Visual Studio 2019/Projects/SnailBot/SnailBot/extras/nut.txt");
+            var lines = File.ReadAllLines("/extras/nut.txt");
             var r = new Random();
             var randomLineNumber = r.Next(0, lines.Length - 1);
             var line = lines[randomLineNumber];
@@ -291,7 +296,7 @@ namespace SnailBot
         [Alias("stupidshitwesay")]
         public async Task quote()
         {
-            var lines = File.ReadAllLines("C:/Users/Parker/Documents/Visual Studio 2019/Projects/SnailBot/SnailBot/extras/quote.txt");
+            var lines = File.ReadAllLines("/extras/quote.txt");
             var r = new Random();
             var randomLineNumber = r.Next(0, lines.Length - 1);
             var line = lines[randomLineNumber];
@@ -303,7 +308,7 @@ namespace SnailBot
         [Alias("sb")]
         public async Task sbquote()
         {
-            var lines = File.ReadAllLines("C:/Users/Parker/Documents/Visual Studio 2019/Projects/SnailBot/SnailBot/extras/sbquote.txt");
+            var lines = File.ReadAllLines("/extras/sbquote.txt");
             var r = new Random();
             var randomLineNumber = r.Next(0, lines.Length - 1);
             var line = lines[randomLineNumber];
@@ -327,7 +332,7 @@ namespace SnailBot
         [Alias("Standing")]
         public async Task mgs()
         {
-            var lines = File.ReadAllLines("C:/Users/Parker/Documents/Visual Studio 2019/Projects/SnailBot/SnailBot/extras/mgs.txt");
+            var lines = File.ReadAllLines("/extras/mgs.txt");
             var r = new Random();
             var randomLineNumber = r.Next(0, lines.Length - 1);
             var line = lines[randomLineNumber];
@@ -476,7 +481,7 @@ namespace SnailBot
         [Alias("whatshouldiwatch")]
         private async Task Movie()
         {
-            var lines = File.ReadAllLines("C:/Users/Parker/Documents/Visual Studio 2019/Projects/SnailBot/SnailBot/extras/TheMovies.txt");
+            var lines = File.ReadAllLines("/extras/TheMovies.txt");
             var r = new Random();
             var randomLineNumber = r.Next(0, lines.Length - 1);
             var line = lines[randomLineNumber];
