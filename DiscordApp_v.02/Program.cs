@@ -19,7 +19,7 @@ namespace DiscordApp_v._02
 
         string token = "";
 
-              static void Main(string[] args) => new Program().Start().GetAwaiter().GetResult();
+        static void Main(string[] args) => new Program().Start().GetAwaiter().GetResult();
 
         public async Task Start()
         {
@@ -62,7 +62,7 @@ namespace DiscordApp_v._02
             // Rather an object stating if the command executed successfully)
             var result = await commands.ExecuteAsync(context, argPos, services);
             //if (!result.IsSuccess)
-                //await context.Channel.SendMessageAsync(result.ErrorReason);
+            //await context.Channel.SendMessageAsync(result.ErrorReason);
         }
 
         private Task Log(LogMessage msg)
